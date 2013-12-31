@@ -1,5 +1,5 @@
 
-%%% C MAJOR FOR SOREN  %%%%
+%%% D MAJOR FOR SOREN  %%%%
 
 
 \header{
