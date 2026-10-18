@@ -1,0 +1,10 @@
+_site/
+.DS_Store
+*.ps
+*.log
+*.swp
+*.wav
+*~
+*.lprof
+*.midi
+*.mid

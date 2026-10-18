@@ -87,7 +87,7 @@ const title = [
   text(TX + 2, 370, "Speaker Layout Explorer", { size: 23, weight: 500, fill: "#c9a3ff", ls: 0.3 }),
   text(TX + 2, 416, "See which of the ten recorded parts sounds", { size: 15.5, weight: 400, fill: "#9a8fb4" }),
   text(TX + 2, 438, "from each speaker, across the whole piece.", { size: 15.5, weight: 400, fill: "#9a8fb4" }),
-  text(TX + 2, 552, "purple4reina.github.io/MusicBook", { size: 13, weight: 500, fill: "#6f6488", ls: 0.6 }),
+  text(TX + 2, 552, "purple4reina.github.io/sheetmusic", { size: 13, weight: 500, fill: "#6f6488", ls: 0.6 }),
 ].join("");
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
