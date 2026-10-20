@@ -1,12 +1,13 @@
 #!/usr/bin/env node
-// Regenerates the timeline data embedded in roadmap.html from the rendered score.
+// Regenerates the timeline data embedded in roadmap.html and roadmap-recital.html from
+// the rendered score.
 //
 //   node images/roadmap.build.mjs
 //
 // Reads ../audio/full-score.midi (produced by audio-files.ly), extracts when each of
 // the 11 clarinet parts (Live + Cl1..Cl10) is sounding, works out the movement
 // boundaries and the 90 rehearsal-mark times, and rewrites the <script id="nyc-data">
-// block in roadmap.html. No dependencies.
+// block in each page. No dependencies.
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -14,7 +15,7 @@ import { dirname, join } from "node:path";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const MIDI = join(here, "..", "audio", "full-score.midi");
-const HTML = join(here, "roadmap.html");
+const PAGES = ["roadmap.html", "roadmap-recital.html"].map((f) => join(here, f));
 
 // --- minimal Standard MIDI File reader -------------------------------------------------
 function parseMidi(buf) {
@@ -168,17 +169,19 @@ const data = {
   parts,
 };
 
-// --- inject into roadmap.html ----------------------------------------------------
+// --- inject into each page ---------------------------------------------------------
 const OPEN = '<script id="nyc-data" type="application/json">';
 const CLOSE = "</script>";
-let html = readFileSync(HTML, "utf8");
-const i = html.indexOf(OPEN);
-if (i === -1) throw new Error(`marker ${OPEN} not found in roadmap.html`);
-const j = html.indexOf(CLOSE, i);
-html = html.slice(0, i + OPEN.length) + "\n" + JSON.stringify(data) + "\n" + html.slice(j);
-writeFileSync(HTML, html);
+for (const page of PAGES) {
+  let html = readFileSync(page, "utf8");
+  const i = html.indexOf(OPEN);
+  if (i === -1) throw new Error(`marker ${OPEN} not found in ${page}`);
+  const j = html.indexOf(CLOSE, i);
+  html = html.slice(0, i + OPEN.length) + "\n" + JSON.stringify(data) + "\n" + html.slice(j);
+  writeFileSync(page, html);
+}
 
 const segCount = Object.values(parts).reduce((a, p) => a + p.segs.length, 0);
 console.log(`movements @ ${data.movements.map(m => m.start).join(" / ")}  end ${data.totalSec}s`);
 console.log(`${marks.length} rehearsal marks, ${segCount} sounding intervals across ${PART_LABELS.length} parts`);
-console.log(`wrote ${HTML}`);
+for (const page of PAGES) console.log(`wrote ${page}`);
