@@ -53,7 +53,8 @@
     width:min(100%, max(620px, calc(200vh - 890px)))}
   .panel{position:relative;aspect-ratio:1/1;border:1px solid var(--line);border-radius:16px;overflow:hidden}
   .panel.video{background:#000}
-  .panel.video video{display:block;width:100%;height:100%;object-fit:cover}
+  .panel.video video{display:block;width:100%;height:100%;object-fit:cover;
+    object-view-box:inset(14.286%)}   /* crop each edge by 1/7 = zoom 1.4×; unlike transform, leaves the native controls alone */
   .panel.video .msg{position:absolute;inset:0;display:none;align-items:center;justify-content:center;
     padding:28px;text-align:center;color:var(--muted)}
   .panel.video.missing .msg{display:flex}
