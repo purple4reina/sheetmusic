@@ -31,7 +31,7 @@ function parseMidi(buf) {
   const division = u16();      // ticks per quarter note
 
   const tempos = [];           // [tick, microsecondsPerQuarter]
-  const tracks = [];           // per track: array of [onTick, offTick]
+  const tracks = [];           // per track: array of [onTick, offTick, midiPitch]
   for (let t = 0; t < ntrk; t++) {
     if (buf.toString("ascii", p, p + 4) !== "MTrk") break;
     p += 4;
@@ -57,10 +57,10 @@ function parseMidi(buf) {
         if (type === 0x90) {
           const pitch = buf[p], vel = buf[p + 1]; p += 2;
           if (vel > 0) (held[pitch] = held[pitch] || []).push(tick);
-          else if (held[pitch] && held[pitch].length) notes.push([held[pitch].shift(), tick]);
+          else if (held[pitch] && held[pitch].length) notes.push([held[pitch].shift(), tick, pitch]);
         } else if (type === 0x80) {
           const pitch = buf[p]; p += 2;
-          if (held[pitch] && held[pitch].length) notes.push([held[pitch].shift(), tick]);
+          if (held[pitch] && held[pitch].length) notes.push([held[pitch].shift(), tick, pitch]);
         } else if (type === 0xc0 || type === 0xd0) {
           p += 1;
         } else {
@@ -128,30 +128,32 @@ for (const m of markMeasuresIII) marks.push({ n: markNo++, t: round(tickToSec(me
 
 // --- per-part sounding intervals ---------------------------------------------------
 // audio-files.ly emits <allParts> then a click track per movement, allParts = [Live, Cl1..Cl10].
-// full-score.midi track 0 = conductor, 1..2 = count-off scaffolding, then 12 tracks per movement.
+// full-score.midi track 0 = conductor, 1 = count-off scaffolding, then 11 tracks per movement.
 const PART_LABELS = ["Live", "Cl1", "Cl2", "Cl3", "Cl4", "Cl5", "Cl6", "Cl7", "Cl8", "Cl9", "Cl10"];
-const MVT_TRACK_BASE = [3, 15, 27];   // first part track of each movement; +11 is that movement's click
+const MVT_TRACK_BASE = [2, 13, 24];   // first part track of each movement (11 parts each)
 const MERGE_GAP = 0.2;                 // s: join tied / beamed notes only, keep the phrasing honest
 
 const parts = {};
 for (let k = 0; k < PART_LABELS.length; k++) {
   const iv = [];
   for (const base of MVT_TRACK_BASE) {
-    for (const [on, off] of tracks[base + k] || []) {
-      iv.push([tickToSec(on) - OFFSET, tickToSec(Math.max(off, on + 1)) - OFFSET]);
+    for (const [on, off, pitch] of tracks[base + k] || []) {
+      iv.push([tickToSec(on) - OFFSET, tickToSec(Math.max(off, on + 1)) - OFFSET, pitch % 12]);
     }
   }
   iv.sort((a, b) => a[0] - b[0]);
   const segs = [];
-  for (let [s, e] of iv) {
+  // each seg is [start, end, pitchClass 0..11 (C=0)]; only same-pitch neighbours are joined
+  for (let [s, e, pc] of iv) {
     s = Math.max(0, s);
-    if (segs.length && s - segs[segs.length - 1][1] <= MERGE_GAP) {
-      segs[segs.length - 1][1] = Math.max(segs[segs.length - 1][1], e);
+    const prev = segs[segs.length - 1];
+    if (prev && prev[2] === pc && s - prev[1] <= MERGE_GAP) {
+      prev[1] = Math.max(prev[1], e);
     } else {
-      segs.push([s, e]);
+      segs.push([s, e, pc]);
     }
   }
-  parts[PART_LABELS[k]] = { segs: segs.map(([s, e]) => [round(s), round(e)]) };
+  parts[PART_LABELS[k]] = { segs: segs.map(([s, e, pc]) => [round(s), round(e), pc]) };
 }
 
 function round(x) { return Math.round(x * 100) / 100; }
