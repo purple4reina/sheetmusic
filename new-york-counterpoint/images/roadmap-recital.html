@@ -127,7 +127,7 @@
   <div class="transport">
     <button id="play" class="primary">Play</button>
     <div class="readout" id="readout"><b>0:00</b> / 0:00</div>
-    <label class="toggle"><input type="checkbox" role="switch" id="colortoggle"><span class="track"></span> Color by pitch</label>
+    <label class="toggle"><input type="checkbox" role="switch" id="colortoggle" checked><span class="track"></span> Color by pitch</label>
     <span class="hint" id="voicecount">0 / 10 sounding</span>
   </div>
 
@@ -200,7 +200,7 @@ function intensity(key,t){ return segAt(key,t) ? 1 : 0; }
 /* one hue per pitch class (C=0 … B=11), evenly spaced round the wheel; octave doesn't matter */
 function pitchHue(pc){ return pc*30; }
 function pitchColor(pc,l){ return "hsl("+pitchHue(pc)+",88%,"+l+"%)"; }
-var colorOn=false;                     // toggled by the "Color by pitch" switch; off by default
+var colorOn=true;                      // toggled by the "Color by pitch" switch; on by default
 
 /* ---------- geometry ---------- */
 function pos(th,r){ var a=th*Math.PI/180; return [CX+r*Math.sin(a), CY-r*Math.cos(a)]; }
