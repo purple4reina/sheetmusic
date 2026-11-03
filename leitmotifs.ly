@@ -1,0 +1,334 @@
+\include "common.ly"
+
+%{
+  All these leitmotifs are from
+  Wagner's Ring: A Listener's Companion & Concordance
+  by J.K. Holman
+
+  Where they overlap the leitmotifs already listed, these should super-cede.
+
+  Leitmotifs with a letter in parenthesis -- ex (A) -- should all be grouped
+  under the same leitmotif heading.  They are all part of the same leitmotif.
+
+  The book lists 145 different leitmotifs (not counting the sub-motifs).  This
+  file will continue to be updated until I've added all of them.
+%}
+
+\header {
+  title      = "Ring Leitmotifs"
+  composer   = "Richard Wagner"
+  instrument = ##f
+}
+
+\paper {
+  print-page-number = ##f
+}
+
+\markup \vspace #1  % extra space after title
+
+\score {
+  \layout {
+    ragged-right = ##t
+    \context {
+      \Staff
+      \remove "Time_signature_engraver"
+    }
+    \context {
+      \Score
+      \omit BarNumber
+    }
+  }
+
+  \transpose c c {
+    \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+    \set Staff.explicitClefVisibility = #end-of-line-invisible
+    \set Staff.printKeyCancellation = ##f
+
+    {
+      \sectionLabel "Beginning"
+      \clef bass
+      \key es \major
+      \time 6/8
+      <<
+        {
+          s2.
+          s2.
+          s2.
+          s2.
+          bes,2.
+          ~bes,2.
+          ~bes,2.
+          ~bes,2.
+          ~bes,2.
+          ~bes,2.
+          ~bes,2.
+          ~bes,2.
+        }
+        \\
+        {
+          es,2.
+          ~es,2.
+          ~es,2.
+          ~es,2.
+          ~es,2.
+          ~es,2.
+          ~es,2.
+          ~es,2.
+          ~es,2.
+          ~es,2.
+          ~es,2.
+          ~es,2.
+        }
+      >>
+    }
+
+    \break
+
+    {
+      \sectionLabel "Nature"
+      \clef bass
+      \key es \major
+      \time 6/8
+      es,4. (~es,4 bes,8 es4. ~es4 g8 bes4. ~bes4 es'8 g'2.)
+    }
+
+    \break
+
+    {
+      \sectionLabel "Rhine"
+      \clef bass
+      \key es \major
+      \time 6/8
+      <<
+        {
+          es4. ~es4 f8 g4. ~g4 aes8 bes 4. ~ bes4 es'8 g'2.
+        }
+        \\
+        {
+          g,8 (bes, g, bes, es bes, es es bes, es g f g g es g bes g bes es' bes g es bes,)
+        }
+      >>
+    }
+
+    \break
+
+    {
+      \sectionLabel "Rhine Daughters"
+      \clef treble
+      \key es \major
+      \time 6/8
+      f''4 (es''8) c''4 (bes'8)
+      aes'8 (es' aes' bes'4 aes'8)
+      c''8 (aes' c'' es''4 c''8)
+      f''8 (es'' c'' aes''4 es''8)
+      c''8. (aes'16 es'8 es''8. c''16 aes'8
+      f''2.
+      es''4. ~es''4) r8
+    }
+
+    \break
+
+    {
+      \sectionLabel "Warning"
+      \clef treble
+      \key es \major
+      \time 6/8
+      r4 g'8 c''4 es''8 d''4. ~d''4 r8
+    }
+
+    \break
+
+    {
+      \sectionLabel "Alberich"
+      \clef bass
+      \key g \major
+      \time 2/4
+      es32 (d des c b,16 [c]) es32 \sf (d des c b,16 [c])
+    }
+
+    \break
+
+    {
+      \sectionLabel "Woe"
+      \clef bass
+      \key es \major
+      \time 6/8
+      bes4 a8 r4 ges8 des'4 c'8
+    }
+
+    \break
+
+    {
+      \sectionLabel "Water Murmurs"
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \clef treble
+      \key c \major
+      \time 9/8
+      <b' d''>8 (<g' e''> <b' d''>
+      <g' e''> <b' d''> <g' e''>
+      <b' d''> <g' e''> <b' d''>
+      <g' e''> <b' d''> <g' e''>
+      <b' d''> <g' e''> <b' d''>
+      <g' e''> <b' d''> <g' e''>)
+    }
+
+    \break
+
+    {
+      \sectionLabel "Gold"
+      \clef bass
+      \key c \major
+      \time 3/4
+      \partial 4 { d8. d16 } g4. (d16) d16-. g8-. b-. d'2.
+    }
+
+    \break
+
+    {
+      \sectionLabel "Rhine Daughters' Joy in the Gold"
+      \clef treble
+      \key c \major
+      \time 9/8
+      g''8. \f e''16 f''8 g''4. e''4 r8 
+      g''8. e''16 f''8 g''4. e''4 r8 
+    }
+
+    \break
+
+    {
+      \sectionLabel "Rhinegold"
+      \clef treble
+      \key c \major
+      \time 9/8
+      a''2. \ff g''4 r8
+      a''2. g''4 r8
+    }
+
+    \break
+
+    {
+      \sectionLabel "The Ring"
+      \clef treble
+      \key c \major
+      \time 9/8
+      <<
+        {
+          <cis'' e''>4. (<a' cis''>4. ~<a' cis''>8 <fis' a'> <e' gis'>)
+          \shape #'((0 . 0) (0 . 0) (3 . 0) (4 . 0)) Slur  % run the slur off the end
+          <dis' fis'>8 (<e' gis'> <fis'a'> <gis' b'>4)
+        }
+        \\
+        {
+          e'4. cis'4. ~cis'4.
+        }
+      >>
+    }
+
+    \break
+
+    {
+      \sectionLabel "Renunciation of Love"
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \clef treble
+      \key c \major
+      \time 4/4
+      r2 \once \omit Accidental g'4 g'8 g'
+      es''4. d''8 c''4 r8 g'8
+      aes'2 g'4 g'8 g'
+      es''4. d''8 c''4 r8 aes'8
+      bes'4
+    }
+
+    \break
+
+    {
+      \sectionLabel "Valhalla (A)"
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \clef treble
+      \key des \major
+      \time 3/4
+      <des' f' aes'>4 (<aes des' f'>4. <f aes des'>8
+      <ges bes>8. <f aes des'>16) <f aes des'>8 (<aes c' es'>8 <aes des' f'>4)
+    }
+
+    \break
+
+    {
+      \sectionLabel "Valhalla (B)"
+      \clef treble
+      \key des \major
+      \time 3/4
+      <<
+        {
+          aes'4 s4 aes'8-. [r16 \tuplet 3/2 { aes'32 aes' aes' }]
+          aes'4 s4 <des'' des'>8-. [r16 \tuplet 3/2 { <des'' des'>32 <des'' des'> <des'' des'> }]
+        }
+        \\
+        {
+          <des' aes>8. (<es' c' aes>16 <es' c' aes>8 [<f' des' aes>-.])
+          <f' des' aes>4-^
+          <des' aes>8. (<es' c' aes>16 <es' c' aes>8 [<f' des' aes>-.])
+          f'4-^
+        }
+      >>
+    }
+
+    \break
+
+    {
+      \sectionLabel "Valhalla (C)"
+      \clef treble
+      \key des \major
+      \time 3/4
+      \shape #'((-3 . 0) (-2 . 0) (0 . 0) (0 . 0)) Slur  % come in from the previous measure
+      <bes' g' des'>8 ([<aes' es' c'>])
+      <bes' g' des'> ([<aes' es' c'>])
+      <bes' g' des'> ([<aes' es' c'>])
+      <bes' g' des'> [<aes' es' c'>]
+      <bes' g' des'> [<aes' es' c'>]
+      <<
+        {
+          <bes' g' des'>8. (<c'' aes' c'>16)
+        }
+        \\
+        {
+          es'8. ~\tuplet 3/2 { es'32 es' es' }
+        }
+      >>
+      <c'' aes' es' c'>2.
+    }
+
+    \break
+
+    {
+      \sectionLabel "Valhalla (D)"
+      \clef treble
+      \key des \major
+      \time 3/4
+      \partial 4 { f'8. (f''16) }
+      <<
+        {
+          f''4 (es''4. c''8) <des'' aes' f' des'>8
+        }
+        \\
+        {
+          <c'' ges'>4. \p \tuplet 3/2 { aes16 aes aes } aes8. aes16
+        }
+      >>
+    }
+
+    \break
+
+    {
+      \sectionLabel "Loves' Enchantment"
+      \clef treble
+      \key f \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \partial 2 { e''4 \> (d''8. d''16 } d''4 \p e'8) r e''4 (d''8. d''16 c''4 f') a' g'8 f'
+      fis'4 g'8 bes' d''4 c''8 bes' a'4 r
+    }
+  }
+}
+
+\version "2.25.12"  % necessary for upgrading to future LilyPond versions.
