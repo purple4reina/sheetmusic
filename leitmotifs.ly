@@ -480,6 +480,62 @@
       \tuplet 3/2 { <g' a' e''>8-. <fis' a' d''>-. <g' a' e''>-. }
       <a' d'' fis''>8.-. <d'' fis'' b''>16 <d'' fis'' b''>4 ~<d'' fis'' b''>8
     }
+
+    \break
+
+    {
+      \sectionLabel "Spear"
+      \clef bass
+      \key c \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \partial 8*5 { \tuplet 3/2 { g,16 (c e } g8-.) <f f'>8 <e e'>8. <d d'>16 }
+      <c c'>4 <b, b> <a, a> <g, g> <f, f> <e, e> <d, d> <c, c> <b,, b,> <a,, a,>
+      <g,, g,> <f,, f,>
+      % slur into the (non-existent) next note: end it on a hidden grace note
+      % and run it off the end
+      \shape #'((0 . 0) (0 . 0) (3 . 0) (4 . 0)) Slur
+      \afterGrace 7/8 <e,, e,>1 ( { \hideNotes <e,, e,>16 ) \unHideNotes }
+    }
+
+    \break
+
+    {
+      \sectionLabel "Loge (A)"
+      \clef bass
+      \key a \major
+      \time 2/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \partial 4 { r16 cis (d g }
+      gis dis e a ais eis fis b
+      c' g gis cis' d' a ais dis'
+      e' b ais dis' e' b ais dis')
+    }
+
+    \break
+
+    {
+      \sectionLabel "Loge (B)"
+      \clef treble
+      \key a \major
+      \time 2/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      gis''32 (a'' gis''32 a'' gis''32 a'' gis''32 a'')
+      bes'' (a'' bes'' a'' bes'' a'' bes'' a'')
+      gis''32 (a'' gis''32 a'' gis''32 a'' gis''32 a'')
+      bes'' (a'' bes'' a'' bes'' a'' bes'' a'')
+    }
+
+    \break
+
+    {
+      \sectionLabel "Loge (C)"
+      \clef treble
+      \key a \major
+      \time 2/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <fis'' cis'''>4. <g'' d'''>8 (<fis'' cis'''>4.) <fis'' dis'''>8 (<fis'' cis'''>8-.)
+    }
   }
 }
 
