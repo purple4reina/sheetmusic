@@ -536,6 +536,54 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       <fis'' cis'''>4. <g'' d'''>8 (<fis'' cis'''>4.) <fis'' dis'''>8 (<fis'' cis'''>8-.)
     }
+
+    \break
+
+    {
+      \sectionLabel "Loge's Craft"
+      \clef bass
+      \key a \major
+      \time 2/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      cis'4. cis'8 dis4 dis8. dis16 a4. a8 bis,2
+    }
+
+    \break
+
+    {
+      \sectionLabel "Woman's Worth"
+      \clef treble
+      \key d \major
+      \time 3/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      f''2 e''4 d''2 c''8 bes' a'2.
+    }
+
+    \break
+
+    {
+      \sectionLabel "Nibelungs"
+      \clef treble
+      \key des \major
+      \time 9/8
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      f'8. f'16 f'8 f' des' es' f'8. f'16 f'8
+      f'8. f'16 f'8 f' des' es' f'8. f'16 f'8
+    }
+
+    \break
+
+    {
+      \sectionLabel "Tarnhelm"
+      \clef treble
+      \key des \major
+      \time 2/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <ces' es'>2 ~(<ces' es'>4 <ces' fes'>4)
+      <ces' es'>2 ~(<ces' es'>4 <ces' fes'>4)
+      <ces' es'>2 ~(<ces' fes'>4. <ces' ges'>8)
+      <ces' ges'>2 ~<ces' ges'> ~<ces' ges'>
+    }
   }
 }
 
