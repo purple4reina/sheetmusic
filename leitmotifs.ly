@@ -37,10 +37,13 @@
     \context {
       \Staff
       \remove "Time_signature_engraver"
+      % each staff keeps its own timing (see "Servitude")
+      \consists "Timing_translator"
     }
     \context {
       \Score
       \omit BarNumber
+      \remove "Timing_translator"
     }
   }
 
@@ -583,6 +586,42 @@
       <ces' es'>2 ~(<ces' es'>4 <ces' fes'>4)
       <ces' es'>2 ~(<ces' fes'>4. <ces' ges'>8)
       <ces' ges'>2 ~<ces' ges'> ~<ces' ges'>
+    }
+
+    \break
+
+    {
+      \sectionLabel "Servitude"
+      <<
+        {  % the staff the other sections use; a \new Staff here would leave it empty
+          \clef bass
+          \key des \major
+          \time 3/4
+          <ges ges'>2-> \ff \> \( \slashedGrace { \once \slurUp ges'8 ( } <f f'>4) \) \!
+          <ges ges'>2-> \> \( \slashedGrace { \once \slurUp ges'8 ( } <f f'>4) \) \!
+          <ges ges'>2-> \> \( \slashedGrace { \once \slurUp ges'8 ( } <f f'>4) \) \!
+          <f f'>2-> \( \slashedGrace { \once \slurUp f'8 ( } <e e'>4) \) \!
+        }
+        \new Staff {
+          % same settings as the staff above; without them a courtesy clef and
+          % key signature leave an empty bar at the end of the Tarnhelm line
+          \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+          \set Staff.explicitClefVisibility = #end-of-line-invisible
+          \set Staff.printKeyCancellation = ##f
+          \clef bass
+          \key des \major
+          % 9/8 with each bar as long as the 3/4 bars above: the measure is 3/4
+          % long and the beat is 3 eighths, which are scaled to 2/3 of their length
+          \time 3/4
+          \scaleDurations 2/3 {
+            f,8. f,16 f,8 f, des, es, \< f,8. f,16 f,8
+            f,8. \> f,16 f,8 \! f, des, es, \< f,8. f,16 f,8
+            f,8. \> f,16 f,8 \! f, des, es, \< f,8. f,16 f,8 \!
+            f,8. f,16 f,8 f, des, es, e,8. \< e,16 e,8 \!
+            \bar "|"
+          }
+        }
+      >>
     }
   }
 }
