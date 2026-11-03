@@ -22,6 +22,11 @@
 
 \paper {
   print-page-number = ##f
+
+  % a full staff (4 staff spaces) more room between systems; defaults are 12/8/1
+  system-system-spacing.basic-distance = #16
+  system-system-spacing.minimum-distance = #12
+  system-system-spacing.padding = #5
 }
 
 \markup \vspace #1  % extra space after title
@@ -320,13 +325,160 @@
     \break
 
     {
-      \sectionLabel "Loves' Enchantment"
+      \sectionLabel "Love's Enchantment"
       \clef treble
       \key f \major
       \time 4/4
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       \partial 2 { e''4 \> (d''8. d''16 } d''4 \p e'8) r e''4 (d''8. d''16 c''4 f') a' g'8 f'
       fis'4 g'8 bes' d''4 c''8 bes' a'4 r
+    }
+
+    \break
+
+    {
+      \sectionLabel "Love (A)"
+      \clef treble
+      \key g \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <<
+        {
+          g'4 (a'8 ais' b' e'' fis'' g''
+          \once \stemDown c'''4)
+        }
+        \\
+        {
+          <e' b>8 r
+        }
+      >>
+    }
+
+    \break
+
+    {
+      \sectionLabel "Love (B)"
+      \clef treble
+      \key g \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <<
+        {
+          c'''4 b''8. fis''16 (a''4 g''8.) dis''16 (fis''4 e''8.) b'16 (d''4 c''8.) g'16
+          (<c'' e' fis'>8)
+        }
+        \\
+        {
+          s4 <e'' g''>8 r s4 <b' e''>8 r
+          s4 <g' b'>8 r s4 <e' g'>8 r
+        }
+      >>
+    }
+
+    \break
+
+    {
+      \sectionLabel "Giants"
+      \clef bass
+      \key f \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \grace { g16 (a b } <c c'>8.) <c c'>16 <c c'>4
+      \grace { g16 (a b } <c c'>8.) <c c'>16 <c c'>4
+      \grace { g16 (a b } <c c'>8.) <c c'>16 <c c'>4
+      \grace { g16 (a b } <c c'>8.) <c c'>16 <des des'>4
+      <c c'>8 [<bes, bes> <aes, aes>8. <bes, bes>16]
+      <c c'>8. g16 <c c'>4
+    }
+
+    \break
+
+    {
+      \sectionLabel "Power of the Gods"
+      \clef bass
+      \key aes \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      es4. (bes8) bes2
+      es8. f16 ges2 aes8. bes16
+      b2 b,4 r8 dis8
+      e4. (c'8) c'4. r8
+      f8. g16 aes2 bes8. c'16 des'2
+    }
+
+    \break
+
+    {
+      \sectionLabel "Treaty"
+      \clef bass
+      \key aes \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      es8. (g16 bes4 es' d'
+      c'4 bes8. bes16 aes4 r8 g
+      f4 g8 aes c'2
+      ~c'4 bes) r d es2
+    }
+
+    \break
+
+    {
+      \sectionLabel "Love (Fasolt)"
+      \clef bass
+      \key d \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <<
+        {
+          fis,4 (g,8 gis, a, \< cis fis a
+          d'2 \> cis'4.) \! fis8
+          (b2. a8 g
+          a2. g8 fis
+          g2. fis8 e
+          d4)
+        }
+        \\
+        {
+          s1
+          d2 (cis <d fis>2 <cis e>2) ~<cis e>2
+          <b, d>2 ~<b, d>
+          a,4 (g, fis,)
+        }
+        \\
+        {
+          s1 s1 s1 s1 s2
+          cis2
+        }
+      >>
+      r4 r2
+    }
+
+    \break
+
+    {
+      \sectionLabel "Holda's Golden Apples"
+      \clef bass
+      \key d \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      fis4. \p e8 d4 a,8 r
+      \tuplet 3/2 { fis,8. a,16 d8 }
+      \acciaccatura { fis8 } \tuplet 3/2 { e8 d e }
+      fis8. (a16) a8 r
+    }
+
+    \break
+
+    {
+      \sectionLabel "Froh"
+      \clef treble
+      \key d \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <a' d'' fis''>8. <a' cis'' e''>16 <a' d''>4 ~
+      \tuplet 3/2 { <a' d''>8 <g' a'>-. <fis' a' d''>-. }
+      \tuplet 3/2 { <g' a' e''>8-. <fis' a' d''>-. <g' a' e''>-. }
+      <a' d'' fis''>8.-. <d'' fis'' b''>16 <d'' fis'' b''>4 ~<d'' fis'' b''>8
     }
   }
 }
