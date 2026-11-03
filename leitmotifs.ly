@@ -660,6 +660,25 @@
       <eis,, eis,>4 \< (<fis,, fis,>4 <eis,, eis,>4 \> <gis,, gis,>8.) r16 \!
       <fisis,, fisis,>4 \< (<gis,, gis,>4 <fisis,, fisis,>4 <b,, b,>8.) \> r16 \!
     }
+
+    \break
+
+    {
+      \sectionLabel "Hoard"
+      \clef bass
+      \key des \major
+      \time 3/4
+      <<
+        {
+          bes2. (bes2) s4 bes2. (bes2)
+        }
+        \\
+        {
+          <bes, bes>2 \< (<c c'>4 \! <des des'>2) \p <bes, bes>4 \<
+          <c c'>2 (<des des'>4 \! <es es'>2) \p
+        }
+      >>
+    }
   }
 }
 
