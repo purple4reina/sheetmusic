@@ -648,6 +648,18 @@
       \shape #'((0 . 0) (0 . 0) (3 . 0) (4 . 0)) Slur
       \afterGrace 7/8 <a c' f' a'>2.) \ff ( { \hideNotes <a c' f' a'>16 ) \unHideNotes }
     }
+
+    \break
+
+    {
+      \sectionLabel "Serpent"
+      \clef bass
+      \key a \major
+      \time 4/4
+      <dis,, dis,>4 \p \< (<e,, e,>4 <dis,, dis,>4 \> <fis,, fis,>8.) r16 \!
+      <eis,, eis,>4 \< (<fis,, fis,>4 <eis,, eis,>4 \> <gis,, gis,>8.) r16 \!
+      <fisis,, fisis,>4 \< (<gis,, gis,>4 <fisis,, fisis,>4 <b,, b,>8.) \> r16 \!
+    }
   }
 }
 
