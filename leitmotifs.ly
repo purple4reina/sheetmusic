@@ -623,6 +623,31 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Power of the Ring"
+      \clef treble
+      \key des \major
+      \time 3/4
+      <<
+        {
+          g'2 (ges'4) g'2 (ges'4)
+        }
+        \\
+        {
+          <bes des'>2. <bes des'>2.
+        }
+      >>
+      \clef bass
+      \once \slurUp <f des' f'>4. (<des bes des'>8 <es c' es'>4 <f des' f'>2 <g bes des' g'>4
+      % slur into the (non-existent) next note: end it on a hidden grace note
+      % and run it off the end
+      \once \slurUp
+      \shape #'((0 . 0) (0 . 0) (3 . 0) (4 . 0)) Slur
+      \afterGrace 7/8 <a c' f' a'>2.) \ff ( { \hideNotes <a c' f' a'>16 ) \unHideNotes }
+    }
   }
 }
 
