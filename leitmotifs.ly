@@ -750,6 +750,16 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Donner's Call"
+      \clef bass
+      \key bes \major
+      \time 4/4
+      \partial 16 f16 bes2. r8. f16 d'8. f16 bes2
+    }
   }
 }
 
