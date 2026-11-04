@@ -473,6 +473,16 @@
     \break
 
     {
+      \sectionLabel "Withering of Life"
+      \clef bass
+      \key d \major
+      \time 4/4
+      bes4. (es8 d4. f8 bes4 bes8 es8 d4 d8) r8
+    }
+
+    \break
+
+    {
       \sectionLabel "Froh"
       \clef treble
       \key d \major
