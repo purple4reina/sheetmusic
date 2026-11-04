@@ -679,6 +679,37 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Hatred"
+      <<
+        {
+          \clef bass
+          \key d \major
+          \time 12/8
+          \partial 2. { r2. }
+          r8 <eis a>4 \> ~<eis a>8 [<eis a> <eis a>] \! <eis a>8 <eis a>4 \p ~<eis a>8 r r
+          r8 <eis a>4 ~<eis a>8 [<eis a> <eis a>] <eis a>8 <eis a>4 ~<eis a>8
+        }
+        \new Staff {
+          \clef bass
+          \key d \major
+          % 4/4 scaled by 3/2 lasts as long as the 12/8 bars above, so the
+          % measure is 12/8 long
+          \time 12/8
+          \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+          \set Staff.explicitClefVisibility = #end-of-line-invisible
+          \set Staff.printKeyCancellation = ##f
+          \scaleDurations 3/2 {
+            \partial 2 { r4 r8
+            \< g,32 (a, b, bis, } cis2.) \! r8
+            \< g,32 (a, b, bis,   cis2.) \! r8
+          }
+        }
+      >>
+    }
   }
 }
 
