@@ -729,8 +729,7 @@
       \clef bass
       \key e \major
       \time 4/4
-      <e, cis>4. (<gis, dis>8 <cis e>4. <dis fis>8 <e gis>4. <gis cis'>8 <cis'
-      e>4.)
+      <e, cis>4. (<gis, dis>8 <cis e>4. <dis fis>8 <e gis>4. <gis cis'>8 <cis' e'>4.)
     }
 
     \break
