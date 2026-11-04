@@ -710,6 +710,17 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Curse"
+      \clef bass
+      \key d \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      r2 r4 fis8 fis a2 \< a4 a8. a16 c'2. \! r8 c' e'2 \ff e4 e8 c8 g2 r2
+    }
   }
 }
 
