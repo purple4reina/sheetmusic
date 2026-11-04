@@ -732,6 +732,25 @@
       <e, cis>4. (<gis, dis>8 <cis e>4. <dis fis>8 <e gis>4. <gis cis'>8 <cis'
       e>4.)
     }
+
+    \break
+
+    {
+      \sectionLabel "Downfall"
+      \clef treble
+      \key e \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <<
+        {
+          <fis'' a''>4. (<e'' gis''>8 <d'' fis''>4. <a' e''>8 <fis' d''>4. <e' a'>8 <d' fis'>4.)
+        }
+        \\
+        {
+          <a' d''>2 ~a'4.
+        }
+      >>
+    }
   }
 }
 
