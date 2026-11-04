@@ -721,6 +721,17 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       r2 r4 fis8 fis a2 \< a4 a8. a16 c'2. \! r8 c' e'2 \ff e4 e8 c8 g2 r2
     }
+
+    \break
+
+    {
+      \sectionLabel "Erda"
+      \clef bass
+      \key e \major
+      \time 4/4
+      <e, cis>4. (<gis, dis>8 <cis e>4. <dis fis>8 <e gis>4. <gis cis'>8 <cis'
+      e>4.)
+    }
   }
 }
 
