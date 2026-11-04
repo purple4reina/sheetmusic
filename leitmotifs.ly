@@ -778,6 +778,24 @@
         { \slurToNothing bes,4 } \\ { ges,8 }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Sword"
+      \clef treble
+      \key des \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \partial 8 { g'8 }
+      <<
+        {
+          c''2 c'4.. e'16 g'4. c''8 \stemDown e''2
+        }
+        \\
+        { <c' e'>2 }
+      >>
+    }
   }
 }
 
