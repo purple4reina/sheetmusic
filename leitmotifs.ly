@@ -52,6 +52,8 @@
     \set Staff.explicitClefVisibility = #end-of-line-invisible
     \set Staff.printKeyCancellation = ##f
 
+    % RHEINGOLD
+
     {
       \sectionLabel "Beginning"
       \clef bass
@@ -794,6 +796,79 @@
         }
         \\
         { <c' e'>2 }
+      >>
+    }
+
+    \break
+
+    {
+      \sectionLabel "Rhine Daughters' Lament"
+      \newSpacingSection
+      \override Score.SpacingSpanner.shortest-duration-space = #1.3  % squeeze onto one line
+      \clef treble
+      \key des \major
+      \time 9/8
+      f''2. es''4 r8
+      f''2. es''4 r8
+      f''4. (aes''4. ~aes''8 g''8 f''8)
+      es''4. ~es''4 r8 c''4.
+      (es''8. des''16 c''8 es''2.)
+      es''8. (des''16 c''8 f''8 es''4 ~es''4 c''8 bes'2.)
+    }
+
+    % 42 - Rheingold Conclusion, has no music
+
+    \break
+
+    % THE VALKYRIE
+
+    {
+      \sectionLabel "Storm"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo the previous squeeze
+      \clef bass
+      \key f \major
+      \time 6/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      % notes here
+    }
+
+    \break
+
+    {
+      \sectionLabel "Storm"
+      \newSpacingSection
+      \override Score.SpacingSpanner.shortest-duration-space = #0.9  % squeeze onto one line
+      \override Score.SpacingSpanner.spacing-increment = #0.8
+      \clef bass
+      \key f \major
+      \time 6/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      d,16 \f (e, f, g, bes,4) a,4-. \p g,-. f,-. \< e,-.
+      d,4-. e,-. f,-. g,-. a,-. f,-.
+      d,16 \f (e, f, g, bes,4) a,4-. \p g,-. f,-. \< e,-.
+      d,4-. e,-. f,-. g,-. a,-. f,-. \!
+    }
+
+    \break
+
+    {
+      \sectionLabel "Siegmund"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key f \major
+      \time 6/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <<
+        {
+          b,1 ~b,4 a, \< (gis,) f, \> (e,4. d,8) \! d,4 (e, f,1.)
+        }
+        \\
+        {
+          b,,1. \fp ~b,,4
+        }
       >>
     }
   }
