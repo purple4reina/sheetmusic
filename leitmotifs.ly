@@ -505,10 +505,7 @@
       \partial 8*5 { \tuplet 3/2 { g,16 (c e } g8-.) <f f'>8 <e e'>8. <d d'>16 }
       <c c'>4 <b, b> <a, a> <g, g> <f, f> <e, e> <d, d> <c, c> <b,, b,> <a,, a,>
       <g,, g,> <f,, f,>
-      % slur into the (non-existent) next note: end it on a hidden grace note
-      % and run it off the end
-      \shape #'((0 . 0) (0 . 0) (3 . 0) (4 . 0)) Slur
-      \afterGrace 7/8 <e,, e,>1 ( { \hideNotes <e,, e,>16 ) \unHideNotes }
+      \slurToNothing <e,, e,>1
     }
 
     \break
@@ -652,11 +649,8 @@
       >>
       \clef bass
       \once \slurUp <f des' f'>4. (<des bes des'>8 <es c' es'>4 <f des' f'>2 <g bes des' g'>4
-      % slur into the (non-existent) next note: end it on a hidden grace note
-      % and run it off the end
       \once \slurUp
-      \shape #'((0 . 0) (0 . 0) (3 . 0) (4 . 0)) Slur
-      \afterGrace 7/8 <a c' f' a'>2.) \ff ( { \hideNotes <a c' f' a'>16 ) \unHideNotes }
+      \slurToNothing <a c' f' a'>2.) \ff
     }
 
     \break
@@ -769,6 +763,20 @@
       \key bes \major
       \time 4/4
       \partial 16 f16 bes2. r8. f16 d'8. f16 bes2
+    }
+
+    \break
+
+    {
+      \sectionLabel "Rainbow Bridge"
+      \clef bass
+      \key des \major
+      \time 3/4
+      \slashedGrace ges,,8 (ges,4) (bes,4. des8 ges8. bes16 des'4 bes4 ges4
+      des4 bes,8 ces8 des4 bes,4 ges,8 aes,8)
+      <<
+        { \slurToNothing bes,4 } \\ { ges,8 }
+      >>
     }
   }
 }
