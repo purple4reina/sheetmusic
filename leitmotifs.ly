@@ -924,6 +924,20 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       d2 (cis8. d16 bes2 g4) <e, e>2. ~<e, e>8 r8 r4
     }
+
+    \break
+
+    {
+      \sectionLabel "Hunding"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \clef bass
+      \key es \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <f aes c'>4 <f aes c'> r8. <f c'>32 <f c'>
+      \tuplet 3/2 { <f c'>8 <f aes> <aes c' f'> } <g b d'>8. <g b d'>16 <g b d'>4
+    }
   }
 }
 
