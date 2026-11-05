@@ -887,6 +887,30 @@
       ~g8 <bes d'> \< ~([<g' d'> <g' bes'>] \! <bes' d''>8. \p ^\markup { \italic "rit." }
       <a' c''>16 <g' bes'>2.)
     }
+
+    \break
+
+    {
+      \sectionLabel "Dawning Love"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \clef treble
+      \key f \major
+      \time 3/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <<
+        {
+          \stemDown bes'2. ~(\stemUp bes'4 a'4. es'8 g'2.)
+          ~g'4 (f'4. c'8 es'4. e'8 [f'8. c'16]
+          es'4 d'8) [es' (e'8. bes16])
+        }
+        \\
+        {
+          s2. <c' es'>2. \p <bes d'> <a c'> <g bes>2 \> <a c'>4
+          bes2 \! _\markup { \italic "piu" \dynamic "p" } <gis b>4
+        }
+      >>
+    }
   }
 }
 
