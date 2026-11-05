@@ -1092,6 +1092,20 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       bes'4 (f'8 f'4 bes'8 d'' c'' d'' es''4 d''8 c''4. ~c''8)
     }
+
+    \break
+
+    {
+      \sectionLabel "Love (Sieglinde)"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key bes \major
+      \time 3/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      es''4 d''4. aes'8 c''2
+    }
   }
 }
 
