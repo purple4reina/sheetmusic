@@ -2640,6 +2640,24 @@
       \partial 4 <a c' g'>4 (<aes ces' es'> <es aes ces'>)
       <a c' g'> (<aes ces' es'> <es aes ces'>)
     }
+
+    \break
+
+    {
+      \sectionLabel "Gutrune's Greeting"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key g \major
+      \time 3/4
+      g'4 (e'') d''8 c''
+      b'8. a'16 g'4 r8 g'
+      g'8. a'16 g'8 (c'' a') f''
+      e''4 d''
+    }
   }
 }
 
