@@ -952,6 +952,32 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       c'4. (c'8 aes4 f d2.) r4 g4. (f8 es4 d8. d16 c2.) r4
     }
+
+    \break
+
+    {
+      \sectionLabel "Bride's Lament"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key es \major
+      \time 12/8
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \partial 8*11 {
+      }
+      <<
+        {
+          <f' es''>8 (<aes' d''> <d' c''> <f' b'> <d' bes'> s4. g'4) r8
+          r8 <f' es''> (<aes' d''> <d' c''> <f' b'> <f' bes'> <d' aes'>4. g'4) r8
+        }
+        \\
+        {
+          s4 s4. \once \stemUp <b aes'>4. ~b8 (d' c')
+          s2. s4. es'8 (d' b)
+        }
+      >>
+    }
   }
 }
 
