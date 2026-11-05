@@ -2515,6 +2515,21 @@
       \time 4/4
       d'2. d'4 b2 gis4. e8 dis1
     }
+
+    \break
+
+    {
+      \sectionLabel "Hagen Ascending"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key bes \major
+      \time 4/4
+      \tuplet 3/2 { ces4 des es } \tuplet 3/2 { f ges aes }
+    }
   }
 }
 
