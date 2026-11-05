@@ -2422,6 +2422,36 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Friendship"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \override Score.SpacingSpanner.shortest-duration-space = #0.7  % squeeze onto one line
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key bes \major
+      \time 4/4
+      <<
+        {
+          f'4 bes2 ~(\tuplet 3/2 { bes8 d') c'-. }
+          g'4-. c'2.
+          \clef bass
+          f'4 bes2.
+        }
+        \\
+        {
+          s2 g2
+          bes4 ~(\tuplet 3/2 { bes8 g a) } a8 (g32 a bes a \tuplet 3/2 { c'8 bes a) }
+          \clef bass
+          a4 ~(\tuplet 3/2 { a8 fis g) }
+          \once \slurUp g8 (fis32 g a g \tuplet 3/2 { bes8 a g) }
+        }
+      >>
+    }
   }
 }
 
