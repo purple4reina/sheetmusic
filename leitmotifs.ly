@@ -2827,6 +2827,31 @@
       <e' a'> <f' bes'> <e' g' c''>)
       <f' a' d''>4. ~<f' a' d''>4
     }
+
+    \break
+
+    {
+      \sectionLabel "Rhine Daughters (Continued) (C)"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key f \major
+      \time 9/8
+      <<
+        {
+          <a' d''>4\arpeggio (<bes' f''>8 c''4. ~c''4) c''8 (
+          <a' d''>4\arpeggio <bes' f''>8 c''4. ~c''4)
+        }
+        \\
+        {
+          f'4\arpeggio s8 g'4 e'16 f' g' e' c' e' g'8
+          f'4\arpeggio s8 g'4 e'16 f' g' [e' c' e']
+        }
+      >>
+    }
   }
 }
 
