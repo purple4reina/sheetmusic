@@ -1195,6 +1195,26 @@
       g''8 (dis''8.) g'16 b'4. ~b'8 r b'16 b'
       e''2. ~e''8 r e''16 e'' g''2. ~g''8 r r
     }
+
+    \break
+
+    {
+      \sectionLabel "Fricka"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key es \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      r8. <es' aes' c'' es''>16 <es' aes' c'' es''>4.
+      <<
+        { aes'4 bes'8 c''2 f'4. g'8 a'2 f'4. d'8 g'2 }
+        \\
+        { <c'es' aes'>4. ~<c' es' aes'>2 <aes c'> ~<aes c'> aes (<g d'>) }
+      >>
+      r2
+    }
   }
 }
 
