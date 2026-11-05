@@ -2452,6 +2452,21 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Gutrune's Deception"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key g \major
+      \time 3/4
+      <b'' d'''>4 <e'' g''>4. <fis'' a''>8 <g'' b''>4 <c'' e''>4. <d'' fis''>8
+    }
   }
 }
 
