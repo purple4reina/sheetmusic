@@ -2108,6 +2108,26 @@
       \time 4/4
       b'2 (c''4) es'' aes''4. (es''8 c''4) aes' es''2 (des''4.) c''8 bes'4
     }
+
+    \break
+
+    {
+      \sectionLabel "Laughing at Death"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key c \major
+      \time 4/4
+      r4 a' e' g' d' f' c' e' a d'8 e' f'4 e'
+      <<
+        { d'4 e'8 f' \slurToNothing g'2 }
+        \\
+        { b4 s d' }
+      >>
+    }
   }
 }
 
