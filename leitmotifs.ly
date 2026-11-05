@@ -2484,6 +2484,22 @@
       \key d \major
       fis'!1
     }
+
+    \break
+
+    {
+      \sectionLabel "Blood-Brotherhood"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key bes \major
+      \time 4/4
+      f''2 ~ \tuplet 3/2 { f''4 f'' f'' } f''2 es''
+      des''2 ~ \tuplet 3/2 { des''4 bes' (c'') } des''2. ~des''8 r
+    }
   }
 }
 
