@@ -1437,6 +1437,29 @@
         { \once \stemDown e'4 }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Sleep"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key d \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <<
+        {
+          <e' g' c''>2 (<dis' fis' b'> bes'2. a'4 <b e' gis'>2 <bes es' g'> ges'2.  f'4
+          <c' e'>2.)  % TODO: this should be rolled
+        }
+        \\
+        {
+          s1 <d'! f'>2 <c' fis'> s1 <a es'>2 <aes d'> g4
+        }
+      >>
+    }
   }
 }
 
