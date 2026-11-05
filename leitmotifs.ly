@@ -2785,6 +2785,30 @@
         { s2 e,2 (a,4.) r8 \slurToNothing e,2 }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Rhine Daughters (Continued) (A)"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key f \major
+      \time 9/8
+      <<
+        {
+          <e' g'>4 (<es' fis'>16 <d' g'> <des' f'>4 <c' e'>16 <des' f'>
+          e'4 \trill dis'16 e') ~
+          <e' g'>4 (<es' fis'>16 <d' g'> <des' f'>4 <c' e'>16 <des' f'>
+          e'4 \trill dis'16 e')
+        }
+        \\
+        { bes4. s4. c'4. s4. s4. c'4.  }
+      >>
+    }
   }
 }
 
