@@ -1692,6 +1692,24 @@
         { s2 \once \stemDown \once \omit Accidental g4 }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Blow, Bellows!"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key f \major
+      \time 6/8
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \partial 4 { a,8 r }
+      <a, a>4. <bes, bes>8 <a, a> <g, g>
+      <f, f>4. <a, a>8 <g, g> <f, f>
+      <e, e>4. <g, g>8 <f, f> <e, e>
+      <d, d>4.
+    }
   }
 }
 
