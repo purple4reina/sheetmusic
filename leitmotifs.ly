@@ -1805,6 +1805,28 @@
       \clef treble
       a8 bes a bes a bes a bes
     }
+
+    \break
+
+    {
+      \sectionLabel "Wood Bird (A)"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key e \major
+      \time 9/8
+      \partial 8*5 r8 cis'''8-> ~cis'''4.
+      \time 4/4
+      \omit TupletNumber
+      \tuplet 3/2 { b''8-. gis''8.-. \< e''16-. }
+      \tuplet 3/2 { cis''8-. a'-. cis''-. }
+      \tuplet 3/2 { gis''-. e''-. gis''-. }
+      b''4 \f
+      \undo \omit TupletNumber
+    }
   }
 }
 
