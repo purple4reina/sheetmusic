@@ -2530,6 +2530,21 @@
       \time 4/4
       \tuplet 3/2 { ces4 des es } \tuplet 3/2 { f ges aes }
     }
+
+    \break
+
+    {
+      \sectionLabel "Escape"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key a \major
+      \time 4/4
+      \partial 4 fis'4 g'2 fis'4. e'8 a'2 r4 d' b' d' d' cis'8 bis gis'4 cis'
+    }
   }
 }
 
