@@ -2608,6 +2608,22 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Dawn"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key bes \major
+      \time 3/4
+      f,4 \p (d bes, g,8. bes,16 es4 g8. a16 bes4 f d'
+      bes4. c'8) c'8. \trill (bes32 c' <bes d'>4)
+    }
   }
 }
 
