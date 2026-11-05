@@ -2128,6 +2128,34 @@
         { b4 s d' }
       >>
     }
+
+    \break
+
+    % TWILIGHT OF THE GODS
+
+    % 110 - Prelude, has no music
+
+    {
+      \sectionLabel "Rope of Fate"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key ges \major
+      \time 6/4
+      <<
+        {
+          % TODO: put all rests in the center of the staff
+          r2. r8 <es' ces''> (<d' aes'> f' <aes d'> f'
+          <d' aes'>4) r r r8 <aes' es''> (<es' ces''> <d'! aes'> f' <d' aes'>
+          \once \stemDown f'2.)
+        }
+        \\
+        { s1. ces'2. s2. \once \stemUp ces''4 }
+      >>
+    }
   }
 }
 
