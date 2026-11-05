@@ -978,6 +978,31 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Volsung Race"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key es \major
+      \time 3/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <es g c'>2 <d g>8. <d g>16
+      <es g c'>8. <g d'>16 
+      <<
+        {
+          \stemDown <c' es'>4. (<g d'>8 \stemUp
+          \clef treble
+          <es' g'>4 ~ \tuplet 3/2 { <es' g'>8 \< <d' fis'> <es' g'> } <g' bes'>8.  <e' c''>16 \!
+          <g' bes'>2 \> <f' aes'>4 \!)
+        }
+        \\
+        { s2 s2. c'2.  }
+      >>
+    }
   }
 }
 
