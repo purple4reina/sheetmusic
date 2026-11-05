@@ -2673,6 +2673,24 @@
       \time 3/4
       \partial 2 des'4 c' ~c'2. r4 des' c' ~c'8 c' c'2
     }
+
+    \break
+
+    {
+      \sectionLabel "Gibichungs' Horn Call"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key g \major
+      \time 3/4
+      <e' g'>4 <a c'>4. <b d'>8
+      <c' e'>8. <e' g'>16 <e' g'>2
+      <e' g'>4 <a c'>4. <b d'>8
+      <c' e'>8. <e' g'>16 <e' g'>2
+    }
   }
 }
 
