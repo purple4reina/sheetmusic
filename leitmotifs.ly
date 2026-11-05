@@ -1003,6 +1003,31 @@
         { s2 s2. c'2.  }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Crisis"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key es \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \partial 2 {
+        <<
+          {
+            a''8 ([bes'' b''8. c'''16]) c'''4 (e''8)
+          }
+          \\
+          {
+            a'2 bes'4.
+          }
+        >>
+      }
+      r8 r2
+    }
   }
 }
 
