@@ -1827,6 +1827,33 @@
       b''4 \f
       \undo \omit TupletNumber
     }
+
+    \break
+
+    {
+      \sectionLabel "Wood Bird (B)"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key e \major
+      \time 1/4
+      b'8-. \p \< e''16-. gis''-. \!
+      \time 9/8
+      <<
+        {
+          fis''8.\arpeggio (e''16 fis'' e'' \repeat tremolo 6 { fis''16 e'' }
+          \time 3/4
+          \stemDown <b' e'' gis''>8\arpeggio) e''4 \p \< (e'' e''8) \> <>\!
+        }
+        \\
+        {
+          <a' cis''>2.\arpeggio \fp
+        }
+      >>
+    }
   }
 }
 
