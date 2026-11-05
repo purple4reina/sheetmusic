@@ -1061,6 +1061,23 @@
       \fermata  % TODO: move fermata right so it's between these two notes
       g'4 r
     }
+
+    \break
+
+    {
+      \sectionLabel "The Sword's Chosen"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key g \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \partial 8 <c' e' g'>16 <c' e' g'>
+      <c' e' g'>4. <e' g' c''>16 <e' g' c''> <e' g' c''>4. <g' b' d''>16 <g' b' d''>
+      <g' b' d''>8 (<c'' e''> <e'' g''>4.) <d'' fis''>8 [<c'' e''> <gis' d''>]
+      <g'! cis''>8
+    }
   }
 }
 
