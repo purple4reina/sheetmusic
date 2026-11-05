@@ -1078,6 +1078,20 @@
       <g' b' d''>8 (<c'' e''> <e'' g''>4.) <d'' fis''>8 [<c'' e''> <gis' d''>]
       <g'! cis''>8
     }
+
+    \break
+
+    {
+      \sectionLabel "Spring Song"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key bes \major
+      \time 9/8
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      bes'4 (f'8 f'4 bes'8 d'' c'' d'' es''4 d''8 c''4. ~c''8)
+    }
   }
 }
 
