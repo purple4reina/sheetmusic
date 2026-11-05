@@ -1787,6 +1787,24 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Forest Murmurs"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key f \major
+      \time 4/4
+      d8 e d e d e d e
+      f8 g f g f g f g
+      \clef treble
+      a8 bes a bes a bes a bes
+    }
   }
 }
 
