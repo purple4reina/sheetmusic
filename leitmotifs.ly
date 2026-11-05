@@ -1135,6 +1135,20 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       r8. f'16 d''4. es''16 es'' ges'4 f'8
     }
+
+    \break
+
+    {
+      \sectionLabel "Love's Deepest Distress"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key g \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      g'2 (g'4. g'8 es''2. d''4 c''2 g' aes'1->)
+    }
   }
 }
 
