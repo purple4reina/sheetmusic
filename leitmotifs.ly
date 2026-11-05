@@ -2156,6 +2156,26 @@
         { s1. ces'2. s2. \once \stemUp ces''4 }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Siegfried (Definitive)"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key es \major
+      \time 4/4
+      <es'' g'' bes'' es'''>4 \ff
+      <es' g' bes'>2^^ ~<es' g' bes'>8 <bes es' g'>-.
+      <g bes es'>2 <f bes d' f'>4-. <g bes es' g'>4-.
+      <aes c' es' aes'>8-. <bes es' g'>-.
+      <f c' es' f'>2
+      <aes' bes' d'' f'' aes'' bes''>4^^ \ff
+    }
   }
 }
 
