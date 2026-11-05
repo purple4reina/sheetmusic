@@ -2093,6 +2093,21 @@
         { s4 s2. s2 gis'4 }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "World's Treasure"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key g \major
+      \time 4/4
+      b'2 (c''4) es'' aes''4. (es''8 c''4) aes' es''2 (des''4.) c''8 bes'4
+    }
   }
 }
 
