@@ -1854,6 +1854,24 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "False Flattery"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key d \major
+      \time 3/4
+      r4 \grace { gis16 (a b } a4.->) g8-.
+      fis8.-. g16-. a4. d'8-.
+      a8.-. b16-. a4-. b8-. cis'-.
+      r4 \grace { dis'16 (e' fis' } \slurToNothing e'2) \sf \> <>\!
+    }
   }
 }
 
