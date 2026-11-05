@@ -1149,6 +1149,20 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       g'2 (g'4. g'8 es''2. d''4 c''2 g' aes'1->)
     }
+
+    \break
+
+    {
+      \sectionLabel "Notung"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key g \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      e''1 e'2 r e''1 e'2
+    }
   }
 }
 
