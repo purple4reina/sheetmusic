@@ -1959,6 +1959,23 @@
       \time 4/4
       f'4 es'2 r8 bes des'2 ~des'8 r r4
     }
+
+    \break
+
+    {
+      \sectionLabel "World's Inheritance"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key bes \major
+      \time 4/4
+      <c''es'' aes'' c'''>2-^ <es' es''>2 ~<es' es''>4 (<c' c''>8)
+      <des' des''>8-. <es' aes' es''>4^^ <f' a' c'' f''>4-^
+      <g' bes' des'' g''>4.-^ <aes' aes''>8 <bes' bes''>2 ~<bes' bes''>16
+    }
   }
 }
 
