@@ -2199,6 +2199,34 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Giving in Love"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key es \major
+      \time 4/4
+      <<
+        {
+          \tuplet 3/2 { es''8 (fis'') g''-. } s2.
+          <aes' c''>4 (\once \stemDown <c'' es'' aes''>2
+          <c'' f''>8. d''16) \slurToNothing es''4
+        }
+        \\
+        {
+          \tuplet 3/2 { g'8 c'' bes' }
+          \once \slurUp <es'' g'' c'''>4. (<es'' bes''>8
+          \tuplet 3/2 { <bes' g''>8 <g' es''>) <bes' d''>8^. }
+          s2. aes'4 \tuplet 3/2 { es'8 fis' g' }
+        }
+      >>
+    }
   }
 }
 
