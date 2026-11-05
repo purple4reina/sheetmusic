@@ -1758,6 +1758,35 @@
       >>
       r8 r4
     }
+
+    \break
+
+    {
+      \sectionLabel "Mission (Mutation)"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      <<
+        {
+          \clef bass
+          \key f \major
+          \time 4/4
+          \partial 4 r8 d
+          bes4 a8 g f4 r8 f8
+          c'4 c c r
+        }
+        \new Staff {
+          \clef treble
+          \key f \major
+          \time 4/4
+          \partial 4 r4
+          <bes d' bes'>4 r <d' f'> r
+          <c' a' c''>4 <g' bes'>8-. <f' a'>-. <c' e' g'>4 r
+        }
+      >>
+    }
   }
 }
 
