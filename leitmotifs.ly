@@ -2706,6 +2706,46 @@
       \time 3/4
       c'4 e' g' c''2. c''4 g' e'' c''2 e''4 c'' aes' e'' c'' aes' e'' f''8 e'' d''4 d'' d'' r r 
     }
+
+    \break
+
+    {
+      \sectionLabel "Vassals' Greeting"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      <<
+        {
+          \clef treble
+          \key bes \major
+          \time 4/4
+          r8. <bes d' f' bes'>16
+          <bes d' f' bes'>4 ~
+          <bes d' f' bes'>8
+          <g bes es' g'>8-.
+          <bes d' f' bes'>4 ~
+          <bes d' f' bes'>8
+          <g bes es' g'>8-.
+          <bes d' f' bes'>8-.
+          <c' f' a' c''>8-.
+          <d' f' bes' d''>8.
+          <es' c'' es''>16
+          <f' d'' f''>4
+        }
+        \new Staff {
+          \clef bass
+          \key bes \major
+          \time 4/4
+          <bes,, bes,>4 r8 <f,, f,>
+          <bes,, bes,>4 r8 <f,, f,>
+          <bes,, bes,>4 r8 <f,, f,>
+          <bes,, bes,>8 <f,, f,>8
+          <bes,, bes,>8 <f,, f,>8
+        }
+      >>
+    }
   }
 }
 
