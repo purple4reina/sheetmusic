@@ -2285,6 +2285,21 @@
       <d' fis'>4. (<b d'>8 <cis' e'>4 <d' fis'>2.)
       <d' fis'>4. (<b d'>8 <cis' e'>4 <d' fis'>2)
     }
+
+    \break
+
+    {
+      \sectionLabel "Hagen"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key d \major
+      \time 3/4
+      b4 e r
+    }
   }
 }
 
