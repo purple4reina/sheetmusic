@@ -1619,6 +1619,29 @@
       d''4 c'' c''8 d'' es''4 d'' ~d''8 r
       f''8 es'' d''4 c''8 bes' f''4 r
     }
+
+    \break
+
+    {
+      \sectionLabel "Mission"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key bes \major
+      \time 3/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <<
+        {
+          g''4 f''8-. es''-. d''4
+          f''4 es''8-. d''-. c''4
+        }
+        \\
+        {
+          es''8 [(b' c'' fis' g' a')] bes'! [(f' g' gis'] a'-.) g'-.
+        }
+      >>
+    }
   }
 }
 
