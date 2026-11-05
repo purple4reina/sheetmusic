@@ -2242,6 +2242,33 @@
       \time 4/4
       r4 g''4 f''8 es'' d''4 f''4 es''8 d'' c''2
     }
+
+    \break
+
+    {
+      \sectionLabel "Radiant Star, Victorious Light"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key es \major
+      \time 4/4
+      <<
+        {
+          aes''2 (c''8 d'' es'' f'')
+          g''2 ~( \tuplet 3/2 { g''8 c'' d'' } \tuplet 3/2 { es'' g'' f'') }
+          f''2 ~( \tuplet 3/2 { f''8 bes' c'' } \tuplet 3/2 { d'' f'' e'') }
+          \slurToNothing <es'! bes' es''!>2
+        }
+        \\
+        {
+          <c'' es''>2 aes' g' aes'
+          f'2 ~f'4. e'8
+        }
+      >>
+    }
   }
 }
 
