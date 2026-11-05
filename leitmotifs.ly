@@ -938,6 +938,20 @@
       <f aes c'>4 <f aes c'> r8. <f c'>32 <f c'>
       \tuplet 3/2 { <f c'>8 <f aes> <aes c' f'> } <g b d'>8. <g b d'>16 <g b d'>4
     }
+
+    \break
+
+    {
+      \sectionLabel "Rights"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key es \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      c'4. (c'8 aes4 f d2.) r4 g4. (f8 es4 d8. d16 c2.) r4
+    }
   }
 }
 
