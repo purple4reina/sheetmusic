@@ -1976,6 +1976,23 @@
       <des' des''>8-. <es' aes' es''>4^^ <f' a' c'' f''>4-^
       <g' bes' des'' g''>4.-^ <aes' aes''>8 <bes' bes''>2 ~<bes' bes''>16
     }
+
+    \break
+
+    {
+      \sectionLabel "Ravens"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key bes \major
+      \time 4/4
+      r4 r8. <bes, bes>16 (<a, a>4.) r16 <bes bes'>16 (<a a'>4) r8.
+      \clef treble
+      <bes' bes''>16 \fp (<a' a''>4.) r8
+    }
   }
 }
 
