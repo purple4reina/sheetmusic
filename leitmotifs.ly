@@ -1335,6 +1335,30 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Brünnhilde's Defiance"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key a \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \tuplet 3/2 { a'8 cis'' fis'' }
+      <a' a''>8. <gis' gis''>16
+      <b' b''>8. <a' a''>16
+      <cis'' cis'''>8. <b' b''>16
+      <d'' d'''>8. <cis'' cis'''>16
+      <e'' e'''>8. <dis'' dis'''>16
+      <fis'' fis'''>8. <eis'' eis'''>16
+      <gis'' gis'''>8. <fis'' fis'''>16
+      \tuplet 3/2 { <a'' a'''>8 (d''') e'''-. }
+      \tuplet 3/2 { fis'''8-. gis'''-. a'''-. }
+      a'''4. (\slurToNothing <d'' gis'' b''>8)
+    }
   }
 }
 
