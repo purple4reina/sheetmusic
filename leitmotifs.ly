@@ -2376,6 +2376,52 @@
       \time 3/4
       r8 es'' fis'4. g'8
     }
+
+    \break
+
+    {
+      \sectionLabel "Rowing"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \override Score.SpacingSpanner.shortest-duration-space = #0.2  % squeeze onto one line
+      \revert Score.SpacingSpanner.spacing-increment
+      <<
+        {
+          \clef bass
+          \key f \major
+          \time 9/8
+          <<
+            {
+              \once \stemDown <e g bes d'>2. \p \> (\once \stemDown <f a c'>4. \p ~
+              c'8 bes a bes4. a4 g8)
+              \once \stemDown <e g bes d'>2. \> (\once \stemDown <f a c'>4. \p ~
+              c'8 bes a bes4. a4 g8)
+            }
+            \\
+            { s2. s4. f4. e d s2. s4. f4. e d }
+          >>
+        }
+        \new Staff {
+          \clef bass
+          \key f \major
+          \time 9/8
+          <<
+            {
+              f,8 d8. bes,16 g,8-. a,-. bes,-. c4.  d4. ~d4 (c8 b,4.)
+              f,8 d8. bes,16 g,8-. a,-. bes,-. c4.  d4. ~d4 (c8 b,4.)
+            }
+            \\
+            {
+              f,2. \sfz ~f,8 [ \once \slurUp f,16 (\set stemRightBeamCount = 1 g,
+              \tuplet 3/2 { \set stemLeftBeamCount = 1 a,16 bes, c ]) } f,2. s4.
+              f,2. \sfz ~f,8 [ \once \slurUp f,16 (\set stemRightBeamCount = 1 g,
+              \tuplet 3/2 { \set stemLeftBeamCount = 1 a,16 bes, c ]) } f,2. s4.
+            }
+          >>
+        }
+      >>
+    }
   }
 }
 
