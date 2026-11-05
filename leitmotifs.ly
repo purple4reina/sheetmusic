@@ -1489,6 +1489,22 @@
       \partial 8 fis8 (b4. bis8 cis'2 cis'4. b16 ais b4.)
       b16 (b c'4. b8 b4 a8. r16 b4. fis8 gis2)
     }
+
+    \break
+
+    % SIEGFRIED
+
+    {
+      \sectionLabel "Brooding"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key des \major
+      \time 3/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      r2. r r <ges bes>2. \p (<a, c>2. ~<a, c>4) r r
+    }
   }
 }
 
