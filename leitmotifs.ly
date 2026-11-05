@@ -871,6 +871,22 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Sieglinde"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \clef treble
+      \key f \major
+      \time 3/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      r8 <g bes>8 \< ([<bes e'> <e' g'>] <g' bes'>8. \p <f' a'>16
+      <e' g'>8) r16 g32 g g2
+      ~g8 <bes d'> \< ~([<g' d'> <g' bes'>] \! <bes' d''>8. \p ^\markup { \italic "rit." }
+      <a' c''>16 <g' bes'>2.)
+    }
   }
 }
 
