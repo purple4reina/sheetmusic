@@ -2227,6 +2227,21 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Mission (Definitive)"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key bes \major
+      \time 4/4
+      r4 g''4 f''8 es'' d''4 f''4 es''8 d'' c''2
+    }
   }
 }
 
