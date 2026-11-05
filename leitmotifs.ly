@@ -1710,6 +1710,32 @@
       <e, e>4. <g, g>8 <f, f> <e, e>
       <d, d>4.
     }
+
+    \break
+
+    {
+      \sectionLabel "Hammering"
+      \newSpacingSection
+      \override Score.SpacingSpanner.shortest-duration-space = #0.5  % squeeze onto one line
+      \revert Score.SpacingSpanner.spacing-increment
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <<
+        {
+          \clef treble
+          \key f \major
+          \time 4/4
+          \stemDown f'4-^ r r2 f'4-^ r r2 f'4-^ r r2
+        }
+        \new Staff {
+          \clef treble
+          \key f \major
+          \time 4/4
+          <a a'>8 \tuplet 3/2 { c'16 [d' e'] } f'8 d' f' [des' g' c']
+          <b f' a'>8-. bes32 ([c' d' e'] f'8-.) d'-. f'-. des'-. g'-. c'-.
+          <b f' a'>8-. bes32 ([c' d' e'] f'8-.) d'-. f'-. des'-. g'-. c'-.
+        }
+      >>
+    }
   }
 }
 
