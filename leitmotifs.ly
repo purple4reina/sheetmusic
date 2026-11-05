@@ -1244,6 +1244,22 @@
       \partial 2 \grace { e16 (f g } f2) \sf
       (e4. \> d8 c 4. e16 d c2 b,4. \p c8 d2)
     }
+
+    \break
+
+    {
+      \sectionLabel "Struggling Against Fate"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key c \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      g,8. ([a,16 bes,8. c16] d8. [g16 bes8. a16]
+      g8. [d16 bes,8. c16] d8. g,16) \grace { d16 (f } es4) \>
+      (d8. \! \> [c16 bes,8. d32 c] bes,4 a,8. g,16) \!
+    }
   }
 }
 
