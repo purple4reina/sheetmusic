@@ -1229,6 +1229,21 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       dis''2 ~(dis''8 cisis'' cis'' ais' cis''4 b'8 fisis'8 ais'4 gis'8 dis'8 e'2)
     }
+
+    \break
+
+    {
+      \sectionLabel "Frustration"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key c \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \partial 2 \grace { e16 (f g } f2) \sf
+      (e4. \> d8 c 4. e16 d c2 b,4. \p c8 d2)
+    }
   }
 }
 
