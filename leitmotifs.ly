@@ -2545,6 +2545,26 @@
       \time 4/4
       \partial 4 fis'4 g'2 fis'4. e'8 a'2 r4 d' b' d' d' cis'8 bis gis'4 cis'
     }
+
+    \break
+
+    {
+      \sectionLabel "Betrayal"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key c \major
+      \time 4/4
+      bes1 ~(bes4 a gis4. e'8)
+      g!1 ~(g4 fis f4. d'8)
+      \bar "||"
+      \clef bass
+      \key a \major
+      e4
+    }
   }
 }
 
