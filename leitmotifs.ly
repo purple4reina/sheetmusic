@@ -911,6 +911,19 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Volsung' Woe"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \clef bass
+      \key f \major
+      \time 3/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      d2 (cis8. d16 bes2 g4) <e, e>2. ~<e, e>8 r8 r4
+    }
   }
 }
 
