@@ -1460,6 +1460,20 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Brünnhilde in Sleep"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key es \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      r4 aes'4 g' \< es'8. d'16 c'4 \!
+    }
   }
 }
 
