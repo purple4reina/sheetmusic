@@ -1556,6 +1556,30 @@
       \slashedGrace { des''8 ( } c''4) bes' aes' g'2 r4
       \slashedGrace { c''8 ( } bes'4) aes' g' f'2 r4
     }
+
+    \break
+
+    {
+      \sectionLabel "Yearning for Knowledge"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <<
+        {
+          \clef treble
+          \key f \major
+          \time 2/4
+          e''2 d''4 (c''8) b' a' gis' e''4 d'' c''8 b'
+        }
+        \new Staff {
+          \clef treble
+          \key f \major
+          \time 2/4
+          b'8 [(a') e'' (b'] d'' [a' c'' b'] a' [gis') e'' (b'] d'' [a' c'' b'])
+        }
+      >>
+    }
   }
 }
 
