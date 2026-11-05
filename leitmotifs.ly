@@ -1505,6 +1505,21 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       r2. r r <ges bes>2. \p (<a, c>2. ~<a, c>4) r r
     }
+
+    \break
+
+    {
+      \sectionLabel "Siegfried's Horn Call"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key g \major
+      \time 6/8
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      g8-. \p d'8.-^ b16-. g8-. a-. b-. c'-. b-. a-. d'-. c'-. b-. e'-. d'-.
+      c'-. fis'-. e'-. d'-.
+    }
   }
 }
 
