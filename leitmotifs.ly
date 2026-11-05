@@ -2583,6 +2583,31 @@
       <b' b''>4-. b2^^ ~b8 b' \ff
       <e' e''>2 <e e'>4.
     }
+
+    \break
+
+    {
+      \sectionLabel "Murder"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key bes \major
+      \time 4/4
+      <<
+        {
+          \partial 8*7 \tuplet 3/2 { fis'16 \< (g' a' } \! bes'4)
+          ~bes'8 a' d' \slashedGrace { f'8 ( } ees'8)
+          c'4 (bes8. \trill a32 b a8) r16
+        }
+        \\
+        {
+          s8 <c' es'>2 a8 bes g2 ~g8
+        }
+      >>
+    }
   }
 }
 
