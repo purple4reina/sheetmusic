@@ -2691,6 +2691,21 @@
       <e' g'>4 <a c'>4. <b d'>8
       <c' e'>8. <e' g'>16 <e' g'>2
     }
+
+    \break
+
+    {
+      \sectionLabel "Vassals' Song"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key c \major
+      \time 3/4
+      c'4 e' g' c''2. c''4 g' e'' c''2 e''4 c'' aes' e'' c'' aes' e'' f''8 e'' d''4 d'' d'' r r 
+    }
   }
 }
 
