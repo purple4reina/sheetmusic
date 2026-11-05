@@ -1602,6 +1602,23 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Joy of Freedom"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \clef treble
+      \key bes \major
+      \time 2/4
+      r2 r4 bes'8 c''8
+      \time 3/4
+      d''4 c'' c''8 d'' es''4 d'' ~d''8 r
+      f''8 es'' d''4 c''8 bes' f''4 r
+    }
   }
 }
 
