@@ -1642,6 +1642,21 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Mime's Frustration"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key des \major
+      \time 3/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      des''2 ces''8 ces'' beses'2 r4 es''2 des''4 ces''2 r4
+      f''4. f''8 es''4 ^\markup { \italic "rall." } des''2 c''8 bes'
+    }
   }
 }
 
