@@ -1993,6 +1993,21 @@
       \clef treble
       <bes' bes''>16 \fp (<a' a''>4.) r8
     }
+
+    \break
+
+    {
+      \sectionLabel "Resistance"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key es \major
+      \time 4/4
+      \partial 8*5 r8 es'4 es'8. es'16 es'4 fes4 d'4 des'8. des'16 c'4 e8
+    }
   }
 }
 
