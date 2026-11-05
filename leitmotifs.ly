@@ -1406,6 +1406,37 @@
       c'2 (b8. a16 g'2 fis'4 e'2 d'8. c'16 a'4. g'8 fis'8. e'16 d''2 c''8.
       c''16 b'4. a'8 g'8. fis'16 fis''2.)
     }
+
+    \break
+
+    {
+      \sectionLabel "Brünnhilde's Love for Wotan"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key e \major
+      \time 3/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <<
+        {
+          % TODO: half-notes are rolled
+          e''4. dis''8 \< [cis''8. b'16]
+          <a' a''>2 \> <gis' gis''>4
+          <fis' fis''>4. \< <e' e''>8 [dis''8. \! cis''16]
+          <cis'' cis'''>2 \> <>\!
+        }
+        \\
+        {
+          <gis' b'>2 s4
+          <b' e''>2.
+          <a' cis''>2 s4
+          <dis'' fis''>2.
+        }
+        \\
+        { \once \stemDown e'4 }
+      >>
+    }
   }
 }
 
