@@ -2746,6 +2746,23 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Oath"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key c \major
+      \time 4/4
+      b'2.. b'8 fis''1 c''2 ~\tuplet 3/2 { c''4 b' a' } e''2 a'4 r
+      g''2 c'' ~c''4 d'' \tuplet 3/2 { f''4 es'' d'' }
+      c''1 g'4 r
+    }
   }
 }
 
