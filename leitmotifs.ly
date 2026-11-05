@@ -1377,6 +1377,20 @@
       f''4. ~f''8 c'' d''
       es''2.
     }
+
+    \break
+
+    {
+      \sectionLabel "Redemption"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key g \major
+      \time 6/8
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      r4 r8 d''4. g''4. ~(g''8 fis'' g'' a''4. g''4) fis''8 g''2. a'4
+    }
   }
 }
 
