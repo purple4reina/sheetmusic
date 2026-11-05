@@ -1042,6 +1042,25 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       r2 r4 c''4 f''4.. f'16 f'4 aes'8 f' c''2 e'8 r8 r8 e''8 e''4 a'8 b' c''4.  a'8 fis'2 r2
     }
+
+    \break
+
+    {
+      \sectionLabel "Volse"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key c \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      gis''2
+      \fermata  % TODO: move fermata right so it's between these two notes
+      gis'4 r
+      g''2
+      \fermata  % TODO: move fermata right so it's between these two notes
+      g'4 r
+    }
   }
 }
 
