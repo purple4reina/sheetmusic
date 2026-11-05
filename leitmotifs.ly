@@ -1291,6 +1291,24 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       bes4. \p (a8 aes4. g8 fis4. g8 es4. c8)
     }
+
+    \break
+
+    {
+      \sectionLabel "Fate"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key a \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <<
+        { a2. (gis4 <eis gis b>1) ~ \once \stemDown <eis gis b>4 }
+        \\
+        { eis1 }
+      >>
+    }
   }
 }
 
