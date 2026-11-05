@@ -2763,6 +2763,28 @@
       g''2 c'' ~c''4 d'' \tuplet 3/2 { f''4 es'' d'' }
       c''1 g'4 r
     }
+
+    \break
+
+    {
+      \sectionLabel "Brünnhilde's Betrayal"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key c \major
+      \time 4/4
+      <<
+        {
+          e8. (cis16 \tuplet 3/2 { fis8 e dis ~} dis4 d4)
+          r8. cis16 (\tuplet 3/2 { fis8 e dis ~} dis4 d4)
+        }
+        \\
+        { s2 e,2 (a,4.) r8 \slurToNothing e,2 }
+      >>
+    }
   }
 }
 
