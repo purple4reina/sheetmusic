@@ -1179,6 +1179,22 @@
       <c e g c'>8.-> g16 c'8 <e e'>4. <c c'>
       <e g c' e'>8.-> c'16 e'8 <g g'>4. <e e'>
     }
+
+    \break
+
+    {
+      \sectionLabel "Hojotoho!"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key d \major
+      \time 9/8
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      g''8 \f (dis''8.) g'16 b'4. ~b'4 r8
+      g''8 (dis''8.) g'16 b'4. ~b'8 r b'16 b'
+      e''2. ~e''8 r e''16 e'' g''2. ~g''8 r r
+    }
   }
 }
 
