@@ -1391,6 +1391,21 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       r4 r8 d''4. g''4. ~(g''8 fis'' g'' a''4. g''4) fis''8 g''2. a'4
     }
+
+    \break
+
+    {
+      \sectionLabel "Brünnhilde's Reproach"
+      \newSpacingSection
+      \override Score.SpacingSpanner.shortest-duration-space = #1.7  % squeeze onto one line
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key g \major
+      \time 3/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      c'2 (b8. a16 g'2 fis'4 e'2 d'8. c'16 a'4. g'8 fis'8. e'16 d''2 c''8.
+      c''16 b'4. a'8 g'8. fis'16 fis''2.)
+    }
   }
 }
 
