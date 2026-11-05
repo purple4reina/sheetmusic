@@ -1121,6 +1121,20 @@
       r8 f'8 d''4. (es''8)
       r8 f'8 d''4. (es''8)
     }
+
+    \break
+
+    {
+      \sectionLabel "Bliss (B)"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key des \major
+      \time 3/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      r8. f'16 d''4. es''16 es'' ges'4 f'8
+    }
   }
 }
 
