@@ -1942,6 +1942,23 @@
         }
       >>
     }
+
+    % 99 - Act 3 Prelude, has no music
+
+    \break
+
+    {
+      \sectionLabel "Wala! Awake!"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key es \major
+      \time 4/4
+      f'4 es'2 r8 bes des'2 ~des'8 r r4
+    }
   }
 }
 
