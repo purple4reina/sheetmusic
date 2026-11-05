@@ -2341,6 +2341,26 @@
       bes'8. ges'16 des'2 ~des'8 r es' f' ges' aes' bes'8. ces''16 des''4 des''
       des'' (ges''8 f'') es'' des'' ces''2 bes'8. bes'16 es''4 r
     }
+
+    \break
+
+    {
+      \sectionLabel "Potion"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key g \major
+      \time 3/4
+      <<
+        { <b dis'>2. ~(<b dis'>4 e' fis' g'2) g'4 ~g'8 b'4.  }
+        \\
+        { s2. s4 b2 c'2. (cis'4)
+        }
+      >>
+    }
   }
 }
 
