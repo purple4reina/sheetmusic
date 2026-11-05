@@ -1520,6 +1520,27 @@
       g8-. \p d'8.-^ b16-. g8-. a-. b-. c'-. b-. a-. d'-. c'-. b-. e'-. d'-.
       c'-. fis'-. e'-. d'-.
     }
+
+    \break
+
+    {
+      \sectionLabel "Youthful Energy"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key bes \major
+      \time 2/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \slashedGrace { \once \slurUp fis''8 ( } <g' bes' g''>-.) \sfz
+      [d''8-. es''-. bes'-.]
+      \slashedGrace { \once \slurUp fis''8 ( } <g' bes' g''>-.) \sfz
+      [d''8-. es''-. bes'-.]
+      \slashedGrace { \once \slurUp fis''8 ( } <g' bes' g''>-.) \sfz
+      [d''8-. es''-. bes'-.]
+      \slashedGrace { \once \slurUp fis''8 ( } <g' bes' g''>-.) \sfz
+      [d''8-. es''-. bes'-.]
+    }
   }
 }
 
