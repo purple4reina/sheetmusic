@@ -1309,6 +1309,32 @@
         { eis1 }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Annunciation of Death"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key a \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <<
+        {
+          s2 (fis'4. gis'8 a'2. gis'4 b'2. ais'4 cis''1) \fermata
+        }
+        \\
+        {
+          \once \stemUp cis'2 ~cis'4 bis
+        }
+        \\
+        {
+          \stemDown \slurDown a1 (<a cis'>2) <b d'> <d' fis'> <b eis'> <ais e'!>1
+        }
+      >>
+    }
   }
 }
 
