@@ -2045,6 +2045,34 @@
       \time 3/4
       r4 r4 d'' g''8. b'16 fis''4. e''8 \tuplet 3/2 { d''8-> c''-> b'-> } a'2
     }
+
+    \break
+
+    {
+      \sectionLabel "Love's Ecstasy"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key c \major
+      \time 3/4
+      <e'' c''' e'''>8. <f''' a'''>32 (<e''' g'''>
+      g''8.) <f'' d'''>32 (<g'' e'''>)
+      <<
+        {
+          d'''8. \trill s16 s2 d'''4 \trill
+        }
+        \\
+        {
+          f''8 r16 b'16
+          <e'' g'' c''' e'''>8. \once \slurUp <f''' a'''>32 (<e''' g'''>)
+          g''8. \once \slurUp <f'' d'''>32 (<g'' e'''>)
+          f''4 \grace { c'''16 (d''' } <e'' g'' c''' e'''>8.)
+        }
+      >>
+    }
   }
 }
 
