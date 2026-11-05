@@ -1106,6 +1106,21 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       es''4 d''4. aes'8 c''2
     }
+
+    \break
+
+    {
+      \sectionLabel "Bliss (A)"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key des \major
+      \time 3/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      r8 f'8 d''4. (es''8)
+      r8 f'8 d''4. (es''8)
+    }
   }
 }
 
