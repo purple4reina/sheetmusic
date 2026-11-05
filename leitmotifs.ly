@@ -1900,6 +1900,48 @@
       r8 r4
       \undo \omit TupletNumber
     }
+
+    \break
+
+    {
+      \sectionLabel "Yearning for Love/Mission"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key g \major
+      \time 3/4
+      <<
+        {
+          d'4. (e'8 [f' fis']
+          g' gis' a'4. g'8
+          f' e') a'4. (g'8
+          f' [e']) a'8 (g' f' e'
+          a'8 [g'] f' [e'])
+        }
+        \\
+        {
+          \stemDown
+          g2. s4 bes2 s4 bes2
+        }
+        \\
+        {
+          \stemDown
+          s2 \slurDown d'4 (d'4) e' cis' <g cis'> e' cis'
+          <g cis'>4 <bes e'> cis' <bes e'> cis'
+        }
+        \\
+        {
+          % these notes are here only to get the tie to render
+          \hideNotes
+          s2. s s s2 s8
+          e'8 ~e'4
+          \unHideNotes
+        }
+      >>
+    }
   }
 }
 
