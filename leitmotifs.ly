@@ -1277,6 +1277,20 @@
       <dis'' gis'' b'' dis'''>4-. <b' dis'' gis'' b''>8-. r16
       <eis' gis' dis''>16-. <eis' gis' dis''>4-. <eis' gis' b'>4-.
     }
+
+    \break
+
+    {
+      \sectionLabel "Hunding's Pursuit"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key aes \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      bes4. \p (a8 aes4. g8 fis4. g8 es4. c8)
+    }
   }
 }
 
