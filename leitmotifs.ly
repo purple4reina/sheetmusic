@@ -1736,6 +1736,28 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Fafner as Dragon"
+      \newSpacingSection
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \override Score.SpacingSpanner.shortest-duration-space = #0.5  % squeeze onto one line
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key aes \major
+      \time 3/4
+      \stemUp d,2 es,4 d,2.
+      <<
+        { es,4 (d, f, e,2.) ~e,8 }
+        \\
+        {
+          s2 r8. ges,,64 \pp aes,, bes,, c, ~c,8 [r16 c,16] c,8 r ges,, r c,
+        }
+      >>
+      r8 r4
+    }
   }
 }
 
