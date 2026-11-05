@@ -2467,6 +2467,23 @@
       \time 3/4
       <b'' d'''>4 <e'' g''>4. <fis'' a''>8 <g'' b''>4 <c'' e''>4. <d'' fis''>8
     }
+
+    \break
+
+    {
+      \sectionLabel "Mission (as Blood-Brotherhood)"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key bes \major
+      \time 4/4
+      r1 es''1 d''4. c''8 bes'2 c''1 f'4 r f'2
+      \key d \major
+      fis'!1
+    }
   }
 }
 
