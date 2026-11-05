@@ -2809,6 +2809,24 @@
         { bes4. s4. c'4. s4. s4. c'4.  }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Rhine Daughters (Continued) (B)"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key f \major
+      \time 9/8
+      <f' a' d''>4. ~(
+      <f' a' d''>8 <c' f'> <d' g'>
+      <e' a'> <f' bes'> <e' g' c''>)
+      <f' a' d''>4. ~<f' a' d''>4
+    }
   }
 }
 
