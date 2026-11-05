@@ -1474,6 +1474,21 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       r4 aes'4 g' \< es'8. d'16 c'4 \!
     }
+
+    \break
+
+    {
+      \sectionLabel "Wotan's Love for Brünnhilde"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key g \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \partial 8 fis8 (b4. bis8 cis'2 cis'4. b16 ais b4.)
+      b16 (b c'4. b8 b4 a8. r16 b4. fis8 gis2)
+    }
   }
 }
 
