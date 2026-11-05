@@ -2176,6 +2176,29 @@
       <f c' es' f'>2
       <aes' bes' d'' f'' aes'' bes''>4^^ \ff
     }
+
+    \break
+
+    {
+      \sectionLabel "The Woman Brünnhilde"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key es \major
+      \time 4/4
+      <<
+        {
+          aes'4. (g'32 aes' bes' aes' f''4. c''8 es''4 \slurToNothing f'2)
+        }
+        \\
+        {
+          d'2. es'4 f'8 r
+        }
+      >>
+    }
   }
 }
 
