@@ -2852,6 +2852,28 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Death"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key c \major
+      \time 4/4
+      <d f aes b>16-. <d f aes b>-. r8
+      r8. <d f aes b>16-. <d f aes b>8-.
+      r8 \tuplet 9/8 {
+        d32 (e \set stemRightBeamCount = 1 f \set stemLeftBeamCount = 1
+        aes bes \set stemRightBeamCount = 1 b \set stemLeftBeamCount = 1
+        d' c' b
+      }
+      b8)
+    }
   }
 }
 
