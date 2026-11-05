@@ -2658,6 +2658,21 @@
       g'8. a'16 g'8 (c'' a') f''
       e''4 d''
     }
+
+    \break
+
+    {
+      \sectionLabel "Hoiho!"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key g \major
+      \time 3/4
+      \partial 2 des'4 c' ~c'2. r4 des' c' ~c'8 c' c'2
+    }
   }
 }
 
