@@ -2361,6 +2361,21 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Plotting"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key es \major
+      \time 3/4
+      r8 es'' fis'4. g'8
+    }
   }
 }
 
