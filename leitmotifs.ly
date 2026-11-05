@@ -1163,6 +1163,22 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       e''1 e'2 r e''1 e'2
     }
+
+    \break
+
+    {
+      \sectionLabel "Valkyries"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key c \major
+      \time 9/8
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \partial 4 r8 <g, g>8
+      <c e g c'>8.-> g16 c'8 <e e'>4. <c c'>
+      <e g c' e'>8.-> c'16 e'8 <g g'>4. <e e'>
+    }
   }
 }
 
