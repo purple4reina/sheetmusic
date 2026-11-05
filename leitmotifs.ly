@@ -2008,6 +2008,28 @@
       \time 4/4
       \partial 8*5 r8 es'4 es'8. es'16 es'4 fes4 d'4 des'8. des'16 c'4 e8
     }
+
+    \break
+
+    {
+      \sectionLabel "Awakening"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \override Score.SpacingSpanner.shortest-duration-space = #1.5  % squeeze onto one line
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key c \major
+      \time 3/4
+      <e'' g'' b''>2. \f \>
+      <c'' e'' g'' c'''>4. \pp \<
+      \clef bass \tuplet 3/2 { c16 [e g] }
+      \clef treble \tuplet 3/2 { c'16 [e' g'] } \tuplet 3/2 { c''16 [e'' g''] }
+      \tuplet 3/2 { c'''16 \f r e } \tuplet 3/2 { g16 [c' e'] }
+      \tuplet 3/2 { g' [c'' c'] } \tuplet 3/2 { e' _\markup { \italic "dim." } [g' c''] }
+      \tuplet 3/2 { e'' \> [g'' g'] } c''32 e'' g'' c'''
+      <e'' g'' c''' e'''>16\arpeggio \p
+    }
   }
 }
 
