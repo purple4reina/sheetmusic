@@ -1215,6 +1215,20 @@
       >>
       r2
     }
+
+    \break
+
+    {
+      \sectionLabel "Withered Love"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key b \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      dis''2 ~(dis''8 cisis'' cis'' ais' cis''4 b'8 fisis'8 ais'4 gis'8 dis'8 e'2)
+    }
   }
 }
 
