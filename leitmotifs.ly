@@ -2565,6 +2565,24 @@
       \key a \major
       e4
     }
+
+    \break
+
+    {
+      \sectionLabel "Honor"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key d \major
+      \time 4/4
+      <c'' c'''>4-. \f c'2.^^
+      <fis'' fis'''>4-. fis'2.^^
+      <b' b''>4-. b2^^ ~b8 b' \ff
+      <e' e''>2 <e e'>4.
+    }
   }
 }
 
