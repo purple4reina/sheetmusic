@@ -1260,6 +1260,23 @@
       g8. [d16 bes,8. c16] d8. g,16) \grace { d16 (f } es4) \>
       (d8. \! \> [c16 bes,8. d32 c] bes,4 a,8. g,16) \!
     }
+
+    \break
+
+    {
+      \sectionLabel "Rage"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key c \major
+      \time 4/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <dis'' gis'' b'' dis'''>4-. <b' dis'' gis'' b''>8-. r16
+      <eis' gis' dis''>16-. <eis' gis' dis''>4-. <eis' gis' b'>4-.
+      <dis'' gis'' b'' dis'''>4-. <b' dis'' gis'' b''>8-. r16
+      <eis' gis' dis''>16-. <eis' gis' dis''>4-. <eis' gis' b'>4-.
+    }
   }
 }
 
