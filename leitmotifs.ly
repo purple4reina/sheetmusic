@@ -1872,6 +1872,34 @@
       a8.-. b16-. a4-. b8-. cis'-.
       r4 \grace { dis'16 (e' fis' } \slurToNothing e'2) \sf \> <>\!
     }
+
+    \break
+
+    {
+      \sectionLabel "Siegfried's Horn Call (Mutation)"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key c \major
+      \time 3/4
+      \omit TupletNumber
+      r4 \tuplet 3/2 { cis8-. a8.-. f16-. }
+      \clef treble
+      <<
+        {
+          \omit TupletNumber
+          \tuplet 3/2 { bes8-. ges'8.-. d'16-. }
+          a8. (cis'16 f'8)
+        }
+        \\
+        { bes4 a4 ~a8 }
+      >>
+      r8 r4
+      \undo \omit TupletNumber
+    }
   }
 }
 
