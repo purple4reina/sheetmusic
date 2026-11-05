@@ -2030,6 +2030,21 @@
       \tuplet 3/2 { e'' \> [g'' g'] } c''32 e'' g'' c'''
       <e'' g'' c''' e'''>16\arpeggio \p
     }
+
+    \break
+
+    {
+      \sectionLabel "Love's Greeting"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key c \major
+      \time 3/4
+      r4 r4 d'' g''8. b'16 fis''4. e''8 \tuplet 3/2 { d''8-> c''-> b'-> } a'2
+    }
   }
 }
 
