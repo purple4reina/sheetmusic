@@ -2073,6 +2073,26 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Immortal Beloved"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key e \major
+      \time 4/4
+      b'2 ~(b'8 e' \tuplet 3/2 { fis'8 gis' a' } b'2.)
+      <<
+        { b4 (b'2 ~b'8 e' \tuplet 3/2 { fis'8 gis' a' } cis''4 b'2) }
+        \\
+        { s4 s2. s2 gis'4 }
+      >>
+    }
   }
 }
 
