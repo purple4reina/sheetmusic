@@ -1580,6 +1580,28 @@
         }
       >>
     }
+
+    \break
+
+    {
+      \sectionLabel "Yearning for Love"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key f \major
+      \time 6/8
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <<
+        {
+          g4. ~g4 gis8 a4. ~a4 b8 c'4 cis'8 e'4 d'8 c'!4. b4.
+        }
+        \\
+        {
+          e2. \p \< ~e4. f4. ~f4 e8 a4. \> f2. <>\!
+        }
+      >>
+    }
   }
 }
 
