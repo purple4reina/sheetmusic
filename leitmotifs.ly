@@ -2325,6 +2325,22 @@
       <fis' a'>8. <a' d''>16 <d'' fis''>8 ([<a' e''>]) <g' b'>8.-. [<e' cis''>16-.]
       <fis' a' d''>4.
     }
+
+    \break
+
+    {
+      \sectionLabel "Gutrune"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \override Score.SpacingSpanner.shortest-duration-space = #1.5  % squeeze onto one line
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key es \major
+      \time 3/4
+      bes'8. ges'16 des'2 ~des'8 r es' f' ges' aes' bes'8. ces''16 des''4 des''
+      des'' (ges''8 f'') es'' des'' ces''2 bes'8. bes'16 es''4 r
+    }
   }
 }
 
