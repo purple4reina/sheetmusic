@@ -2300,6 +2300,31 @@
       \time 3/4
       b4 e r
     }
+
+    \break
+
+    {
+      \sectionLabel "Gunther"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \override Score.SpacingSpanner.shortest-duration-space = #1.5  % squeeze onto one line
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef bass
+      \key d \major
+      \time 3/4
+      <d fis b>8. [cis'16 d'8. cis'16 d'8. <cis' e'>16]
+      \clef treble
+      <d' fis'>8. <d' a'>16
+      <<
+        { d''8 (cis'') b'8. ais'16 }
+        \\
+        { fis'4 <cis' e'> }
+      >>
+      <d' b'>8 r16 <fis cis'>16-. [<b d'>8. <cis' e'>16-. <d' fis'>8. <e' g'>16-.]
+      <fis' a'>8. <a' d''>16 <d'' fis''>8 ([<a' e''>]) <g' b'>8.-. [<e' cis''>16-.]
+      <fis' a' d''>4.
+    }
   }
 }
 
