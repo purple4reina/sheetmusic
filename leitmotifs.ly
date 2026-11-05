@@ -1541,6 +1541,21 @@
       \slashedGrace { \once \slurUp fis''8 ( } <g' bes' g''>-.) \sfz
       [d''8-. es''-. bes'-.]
     }
+
+    \break
+
+    {
+      \sectionLabel "Mime's Mission"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key aes \major
+      \time 3/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \slashedGrace { des''8 ( } c''4) bes' aes' g'2 r4
+      \slashedGrace { c''8 ( } bes'4) aes' g' f'2 r4
+    }
   }
 }
 
