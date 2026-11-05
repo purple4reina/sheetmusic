@@ -1672,6 +1672,26 @@
       <b fis' b'>2-. (<a d' a'>-. <bes f'! bes'>-. <b e' gis'>-.)
       <a e' a'>-. (<g c' g'>-. <aes es' aes'>-. <a d' fis'>-.)
     }
+
+    \break
+
+    {
+      \sectionLabel "World Ash Tree"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key des \major
+      \time 3/4
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      <<
+        { f'2 ~f'8 r } % TODO: put this 8th rest center of staff
+        \\
+        { f4. (g8 a bes \stemUp <a c'>8. <c' f'>16 <f' a'>2) }
+        \\
+        { s2 \once \stemDown \once \omit Accidental g4 }
+      >>
+    }
   }
 }
 
