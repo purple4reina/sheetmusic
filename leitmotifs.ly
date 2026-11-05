@@ -1359,6 +1359,24 @@
       \tuplet 3/2 { fis'''8-. gis'''-. a'''-. }
       a'''4. (\slurToNothing <d'' gis'' b''>8)
     }
+
+    \break
+
+    {
+      \sectionLabel "The Heroic Siegfried"
+      \newSpacingSection
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      \clef treble
+      \key g \major
+      \time 6/8
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \partial 4. g'4. c''4. ~c''4 c''8 es''4. d''4 c''8
+      aes''2. c''4. bes'4 aes'8
+      es''4. ~es''4 es''8
+      f''4. ~f''8 c'' d''
+      es''2.
+    }
   }
 }
 
