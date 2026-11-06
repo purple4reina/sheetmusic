@@ -2024,7 +2024,7 @@
       \newSpacingSection
       \stemNeutral
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
-      \override Score.SpacingSpanner.shortest-duration-space = #1.5  % squeeze onto one line
+      \override Score.SpacingSpanner.shortest-duration-space = #1.4  % squeeze onto one line
       \revert Score.SpacingSpanner.spacing-increment
       \clef treble
       \key c \major
@@ -2074,6 +2074,7 @@
         }
         \\
         {
+          \override Rest.staff-position = #0  % all rests in the center of the staff
           f''8 r16 b'16
           <e'' g'' c''' e'''>8. \once \slurUp <f''' a'''>32 (<e''' g'''>)
           g''8. \once \slurUp <f'' d'''>32 (<g'' e'''>)
