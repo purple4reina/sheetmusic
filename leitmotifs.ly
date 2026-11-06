@@ -39,6 +39,15 @@
       \remove "Time_signature_engraver"
       % each staff keeps its own timing (see "Servitude")
       \consists "Timing_translator"
+      % no courtesy key signature at the end of a line, even after a partial bar
+      \override KeySignature.break-visibility = #begin-of-line-visible
+      \override KeyCancellation.break-visibility = #begin-of-line-visible
+      % the hidden end-of-line key signature must not leave empty staff after the last bar line
+      \override KeySignature.stencil =
+        #(lambda (grob)
+           (if (= (ly:item-break-dir grob) LEFT)
+               empty-stencil
+               (ly:key-signature-interface::print grob)))
     }
     \context {
       \Score
@@ -1054,11 +1063,11 @@
       \key c \major
       \time 4/4
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
-      gis''2
-      \fermata  % TODO: move fermata right so it's between these two notes
+      \once \override Script.extra-offset = #'(2.0 . 0)  % center between the two notes
+      gis''2 \fermata
       gis'4 r
-      g''2
-      \fermata  % TODO: move fermata right so it's between these two notes
+      \once \override Script.extra-offset = #'(2.3 . 0)  % center between the two notes
+      g''2 \fermata
       g'4 r
     }
 
@@ -1684,7 +1693,7 @@
       \time 3/4
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       <<
-        { f'2 ~f'8 r } % TODO: put this 8th rest center of staff
+        { f'2 ~f'8 \once \override Rest.staff-position = #0 r }
         \\
         { f4. (g8 a bes \stemUp <a c'>8. <c' f'>16 <f' a'>2) }
         \\
@@ -2146,7 +2155,7 @@
       \time 6/4
       <<
         {
-          % TODO: put all rests in the center of the staff
+          \override Rest.staff-position = #0  % all rests in the center of the staff
           r2. r8 <es' ces''> (<d' aes'> f' <aes d'> f'
           <d' aes'>4) r r r8 <aes' es''> (<es' ces''> <d'! aes'> f' <d' aes'>
           \once \stemDown f'2.)
@@ -2599,6 +2608,7 @@
         {
           \partial 8*7 \tuplet 3/2 { fis'16 \< (g' a' } \! bes'4)
           ~bes'8 a' d' \slashedGrace { f'8 ( } ees'8)
+          \override Rest.staff-position = #0  % all rests in the center of the staff
           c'4 (bes8. \trill a32 b a8) r16
         }
         \\
@@ -2916,7 +2926,10 @@
               s2 des,8. [g,16 beses,8. aes,16]
             }
           >>
-          \repeat tremolo 12 { aes,,32 aes, _\fermata } aes,,8 r  % TODO: fermata should be between the tremolo notes
+          \override Script.extra-offset = #'(-2.5 . -3.5)  % center between the tremolo notes
+          \repeat tremolo 12 { aes,,32 aes, _\fermata }
+          \revert Script.extra-offset
+          aes,,8 r
           \bar "||"
           <des f aes>8 r16 s s8
         }
