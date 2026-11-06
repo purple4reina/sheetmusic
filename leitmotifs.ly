@@ -2874,6 +2874,55 @@
       }
       b8)
     }
+
+    \break
+
+    {
+      \sectionLabel "Rest"
+      \newSpacingSection
+      \stemNeutral
+      \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
+      \revert Score.SpacingSpanner.shortest-duration-space  % undo any squeeze
+      \revert Score.SpacingSpanner.spacing-increment
+      <<
+        {
+          \clef treble
+          \key aes \major
+          \time 4/4
+          <g des' f'>2. _\markup { \italic "più" \dynamic "p" } <aes c' es'>4
+          <aes des' f'>4. \pp <aes c' es'>8 <aes des' f'> <aes c' es'> <aes des' f'> <aes c' es'>
+          <ges beses des' ges'>1 ~<ges beses des' ges'>2. <ges beses eses' ges'>4
+          <aes des' f' aes'>2. _\markup { \italic "più" \dynamic "p" } aes8.  ^\markup { \italic "espress." } f'16
+          <ges aes c' f' aes'>2 \fermata \> ~ \once \slurUp <ges aes c' es' aes'>4. \fermata \! (aes8)
+          \bar "||"
+          <des' f' des''>4.
+        }
+        \new Staff {
+          \clef bass
+          \key aes \major
+          \time 4/4
+          <<
+            {
+              bes,2. (c4)
+              \repeat tremolo 4 { des32 aes, } des8 <aes,, aes,> <des, des> <aes,, aes,> <des, des> <aes,, aes,>
+              <g,, g,>8. [<aes,, aes,>16 <beses,, beses,>8. \< <ces, ces>16]
+              des8. [g16 bes8. aes16]
+              ges,8. \> [<des, des>16 <beses,, beses,>8. <ces, ces>16] <des, des>8 \! <ges,, ges,!> <eses, eses>4
+              <des, des>2 <c, c>4 <bes,, bes,>
+            }
+            \\
+            {
+              <es, es>1
+              des,4. s8 s2
+              s2 des,8. [g,16 beses,8. aes,16]
+            }
+          >>
+          \repeat tremolo 12 { aes,,32 aes, _\fermata } aes,,8 r  % TODO: fermata should be between the tremolo notes
+          \bar "||"
+          <des f aes>8 r16 s s8
+        }
+      >>
+    }
   }
 }
 
