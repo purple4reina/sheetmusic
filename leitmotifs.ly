@@ -1420,11 +1420,10 @@
       \set Timing.measurePosition = #ZERO-MOMENT  % don't inherit partial bar
       <<
         {
-          % TODO: half-notes are rolled
           e''4. dis''8 \< [cis''8. b'16]
-          <a' a''>2 \> <gis' gis''>4
+          <a' a''>2\arpeggio \> <gis' gis''>4
           <fis' fis''>4. \< <e' e''>8 [dis''8. \! cis''16]
-          <cis'' cis'''>2 \> <>\!
+          <cis'' cis'''>2\arpeggio \> <>\!
         }
         \\
         {
@@ -1452,11 +1451,11 @@
       <<
         {
           <e' g' c''>2 (<dis' fis' b'> bes'2. a'4 <b e' gis'>2 <bes es' g'> ges'2.  f'4
-          <c' e'>2.)  % TODO: this should be rolled
+          <c' e'>2.\arpeggio)
         }
         \\
         {
-          s1 <d'! f'>2 <c' fis'> s1 <a es'>2 <aes d'> g4
+          s1 <d'! f'>2 <c' fis'> s1 <a es'>2 <aes d'> g4\arpeggio
         }
       >>
     }
